@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Datos personales</title></head>
+<body>
+    <h1>Datos personales</h1>
+    <form action="porcesarDatos.php" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" maxlength="20" required>
+        <br>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" maxlength="20" required>
+        <br>
+        <!-- TODO: crea un select name="edad" con los cuatro intervalos del enunciado. -->
+        <label for="edad">Seleccione la edad:</label>
+        <select name="edad" id="fruta">
+            <option value="Menos de 20 años»">Menos de 20 años»</option>
+            <option value="Entre 20 y 39 años">Entre 20 y 39 años</option>
+            <option value="Entre 40 y 59 años">Entre 40 y 59 años</option>
+            <option value="60 años o más">60 años o más</option>
+        </select>
+        <br>
+        <!-- TODO: crea el campo numérico name="peso" que admita decimales. -->
+        <label for="peso">Indique su peso:</label>
+        <input type="number" id="peso" name="peso" min="20" max="500">
+        <br>
+        <!-- TODO: crea los radios name="sexo" (masculino/femenino). -->
+        <br>
+        <label for="sexo">Sexo</label>
+        <br>
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="masculino" name="sexo">
+        <label for="femenino">Femenino</label>
+        <input type="radio" id="femenino" name="sexo">
+        <br>
+        <!-- TODO: crea los radios name="estado-civil" (soltero/casado/otro). -->
+        <br>
+        <label for="estado-civil">Estado Civil</label>
+        <br>
+        <label for="soltero">Soltero</label>
+        <input type="radio" id="soltero" name="estado-civil">
+        <label for="casado">Casado</label>
+        <input type="radio" id="casado" name="estado-civil">
+        <label for="otro">Otro</label>
+        <input type="radio" id="otro" name="estado-civil">
+        <!-- TODO: crea los checkboxes name="aficiones[]" con los valores pedidos. -->
+        <label for="aficiones">Aficiones:</label>
+        
+        <!-- TODO: añade los botones Enviar y Borrar. -->
+    </form>
+</body>
+</html>
