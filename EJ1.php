@@ -53,7 +53,6 @@
                     echo "<td>" . number_format($subtotal, 2, ',', '.') . " €</td>";
                     echo "</tr>";
                 }
-
                 $i++;
             }
 
