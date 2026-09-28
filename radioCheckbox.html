@@ -7,8 +7,10 @@
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" maxlength="20" required>
         <br>
+        <br>
         <label for="apellidos">Apellidos</label>
         <input type="text" id="apellidos" name="apellidos" maxlength="20" required>
+        <br>
         <br>
         <!-- TODO: crea un select name="edad" con los cuatro intervalos del enunciado. -->
         <label for="edad">Seleccione la edad:</label>
@@ -43,9 +45,25 @@
         <label for="otro">Otro</label>
         <input type="radio" id="otro" name="estado-civil">
         <!-- TODO: crea los checkboxes name="aficiones[]" con los valores pedidos. -->
-        <label for="aficiones">Aficiones:</label>
-        
+        <br>
+        <label for="aficiones">Aficiones</label>
+        <br>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Cine</label>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Literatura</label>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Tebeos</label>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Deporte</label>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Musica</label>
+        <input type="checkbox" name="aficiones[]" value="si">
+        <label for="aficiones">Television</label>
         <!-- TODO: añade los botones Enviar y Borrar. -->
+        <br>
+        <input type="submit">
+        <input type="reset">
     </form>
 </body>
 </html>
