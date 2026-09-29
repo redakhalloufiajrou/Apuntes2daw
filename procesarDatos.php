@@ -31,10 +31,13 @@
     echo "<p>Peso: $pesoSeguro kg.</p>";
     echo "<p>Sexo: $sexoSeguro</p>";
     echo "<p>Estado Civil: $estadoCivilSeguro</p>";
-
 // TODO 4: recorre las aficiones y muéstralas en una lista <ul>.
-
-
+    foreach ($aficiones as $aficion) {
+        $aficionSeguro = htmlspecialchars($aficion, ENT_QUOTES, 'UTF-8');
+        echo "<ul>";
+        echo "<li>$aficionSeguro</li>";
+        echo "</ul>";
+    }
 // TODO 5: contempla el caso de no haber seleccionado ninguna afición.
 // Nota: al imprimir texto enviado por el usuario, escápalo para HTML.
 
