@@ -7,7 +7,7 @@
   <title>Impulso Creativo · Marketing, Diseño e IA</title>
   <style>
     /* el elemento raíz del documento (html) */
-    RELLENA_AQUI {
+    :root {
       --color-fondo: #020617;
       --color-fondo-suave: #050816;
       --color-panel: #020617;
@@ -153,7 +153,7 @@
     }
 
     /* los enlaces dentro de nav que está dentro de .barra-navegacion */
-    RELLENA_AQUI {
+    .barra-navegacion nav a {
       color: var(--color-texto-suave);
       position: relative;
       padding-bottom: 0.15rem;
@@ -161,7 +161,7 @@
     }
 
     /* el pseudo-elemento ::after de esos enlaces (la línea animada) */
-    RELLENA_AQUI {
+    .barra-navegacion nav a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -174,18 +174,18 @@
     }
 
     /* los enlaces del menú cuando el ratón pasa por encima */
-    RELLENA_AQUI {
+    .barra-navegacion nav a:hover {
       color: var(--color-texto);
       transform: translateY(-1px);
     }
 
     /* el ::after de esos enlaces cuando están en hover (subrayado completo) */
-    RELLENA_AQUI {
+    .barra-navegacion nav a:hover::after {
       width: 100%;
     }
 
     /* todos los elementos con class="boton" (estilo base de botón) */
-    RELLENA_AQUI {
+    .boton {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -205,7 +205,7 @@
     }
 
     /* el botón principal con class="boton-primario" */
-    RELLENA_AQUI {
+    .boton-primario {
       background: radial-gradient(circle at 0 0, #22c55e 0, transparent 60%),
         linear-gradient(135deg, var(--color-principal), #ec4899);
       color: #f9fafb;
@@ -215,7 +215,7 @@
     }
 
     /* el botón principal cuando el ratón pasa por encima */
-    RELLENA_AQUI {
+    .boton-primario:hover {
       transform: translateY(-1px) scale(1.01);
       box-shadow:
         0 16px 40px rgba(79, 70, 229, 0.95),
@@ -223,7 +223,7 @@
     }
 
     /* el botón secundario con class="boton-secundario" */
-    RELLENA_AQUI {
+    .boton-secundario {
       background: rgba(15, 23, 42, 0.9);
       color: var(--color-texto);
       border-color: rgba(55, 65, 81, 0.9);
@@ -231,36 +231,37 @@
     }
 
     /* el botón secundario en hover */
-    RELLENA_AQUI {
+    .boton-secundario:hover {
       background: rgba(15, 23, 42, 1);
       border-color: rgba(148, 163, 184, 0.9);
       transform: translateY(-1px);
     }
 
     /* cualquier enlace mientras se hace clic (estado activo) */
-    RELLENA_AQUI {
+    a:active {
       transform: scale(0.98);
     }
 
     /* cualquier enlace cuando tiene el foco (por teclado, por ejemplo) */
-    RELLENA_AQUI {
+    a:focus {
+
       outline: 2px solid rgba(129, 140, 248, 0.9);
       outline-offset: 3px;
     }
 
     /* enlaces no visitados (se deja vacío para el ejercicio) */
-    RELLENA_AQUI {}
+    a:link {}
 
     /* enlaces ya visitados (se deja vacío para el ejercicio) */
-    RELLENA_AQUI {}
+    a:visited {}
 
     /* la sección con id="inicio" */
-    RELLENA_AQUI {
+    #inicio {
       padding-top: 5.3rem;
     }
 
     /* el .contenedor que está dentro de .seccion-inicio */
-    RELLENA_AQUI {
+    .seccion-inicio .contenedor {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 3.5rem;
@@ -268,7 +269,7 @@
     }
 
     /* el span con class="etiqueta-seccion" */
-    RELLENA_AQUI {
+    .etiqueta-seccion {
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.9rem;
@@ -285,7 +286,7 @@
     }
 
     /* el ::before de .etiqueta-seccion (punto luminoso) */
-    RELLENA_AQUI {
+    .etiqueta-seccion::before {
       content: "";
       width: 7px;
       height: 7px;
@@ -297,7 +298,7 @@
     }
 
     /* el ::after de .etiqueta-seccion (texto "· IA & DATA") */
-    RELLENA_AQUI {
+    .etiqueta-seccion::after {
       content: " · IA & DATA";
       font-weight: 600;
       color: var(--color-cian);
@@ -305,7 +306,7 @@
     }
 
     /* el título principal del hero con class="titulo-principal" */
-    RELLENA_AQUI {
+    .titulo-principal {
       font-size: clamp(2.5rem, 4.6vw, 3.3rem);
       letter-spacing: -0.04em;
       font-weight: 800;
@@ -313,14 +314,14 @@
     }
 
     /* los span que están dentro del título principal */
-    RELLENA_AQUI {
+    .titulo-principal span {
       background: linear-gradient(120deg, #22d3ee, #a855f7, #f97316);
       -webkit-background-clip: text;
       color: transparent;
     }
 
     /* el párrafo del hero con class="parrafo-hero" */
-    RELLENA_AQUI {
+    .parrafo-hero {
       max-width: 34rem;
       color: var(--color-texto-suave);
       font-size: 0.98rem;
@@ -328,39 +329,39 @@
     }
 
     /* la primera línea del párrafo .parrafo-hero */
-    RELLENA_AQUI {
+    .parrafo-hero::first-line {
       font-weight: 600;
       color: #e5e7eb;
     }
 
     /* la primera letra del párrafo .parrafo-hero */
-    RELLENA_AQUI {
+    .parrafo-hero::first-letter {
       font-size: 1.7em;
       font-weight: 700;
       margin-right: 0.12rem;
     }
 
     /* el párrafo que tiene id="resumen-destacado" */
-    RELLENA_AQUI {
+    #resumen-destacado {
       font-weight: 600;
       color: #e5e7eb;
     }
 
     /* el elemento con id="palabra-clave" que está dentro de un párrafo */
-    RELLENA_AQUI {
+    #palabra-clave {
       color: var(--color-secundario);
       font-weight: 700;
     }
 
     /* el primer párrafo que va justo después de .parrafo-hero */
-    RELLENA_AQUI {
+    .parrafo-hero+p {
       font-size: 0.86rem;
       color: var(--color-texto-suave);
       margin-bottom: 1.6rem;
     }
 
     /* el contenedor de botones del hero con class="grupo-botones" */
-    RELLENA_AQUI {
+    .grupo-botones {
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem;
@@ -368,7 +369,7 @@
     }
 
     /* la lista de beneficios con class="lista-beneficios" */
-    RELLENA_AQUI {
+    .lista-beneficios {
       display: flex;
       flex-wrap: wrap;
       gap: 0.9rem 1.4rem;
@@ -377,14 +378,14 @@
     }
 
     /* los li que son hijos directos de .lista-beneficios */
-    RELLENA_AQUI {
+    .lista-beneficios>li {
       display: flex;
       align-items: center;
       gap: 0.45rem;
     }
 
     /* los elementos con class="icono-lista" (los puntos de color) */
-    RELLENA_AQUI {
+    .icono-lista {
       width: 9px;
       height: 9px;
       border-radius: 999px;
@@ -394,26 +395,26 @@
     }
 
     /* el primer li dentro de .lista-beneficios */
-    RELLENA_AQUI {
+    .lista-beneficios>li:first-child {
       color: #f9fafb;
       font-weight: 600;
     }
 
     /* el último li dentro de .lista-beneficios */
-    RELLENA_AQUI {
+    .lista-beneficios>li:last-child {
       opacity: 0.92;
     }
 
     /* los li en posición par (2,4,6,...) dentro de .lista-beneficios */
-    RELLENA_AQUI {
+    .lista-beneficios>li:nth-child(even) {
       text-decoration: underline dotted rgba(148, 163, 184, 0.7);
     }
 
     /* los li en posición impar (1,3,5,...) dentro de .lista-beneficios */
-    RELLENA_AQUI {}
+    .lista-beneficios>li:nth-child(odd) {}
 
     /* la tarjeta de datos a la derecha del hero con class="panel-datos" */
-    RELLENA_AQUI {
+    .panel-datos {
       border-radius: var(--radio-card);
       padding: 1.4rem;
       background:
@@ -428,7 +429,7 @@
     }
 
     /* el ::before de .panel-datos (halo de luz) */
-    RELLENA_AQUI {
+    .panel-datos::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -438,7 +439,7 @@
     }
 
     /* la cabecera de la tarjeta de datos (class="cabecera-panel") */
-    RELLENA_AQUI {
+    .cabecera-panel {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -448,7 +449,7 @@
     }
 
     /* la etiqueta que indica estado IA activa / modo piloto (class="etiqueta-estado") */
-    RELLENA_AQUI {
+    .etiqueta-estado {
       font-size: 0.75rem;
       padding: 0.18rem 0.75rem;
       border-radius: 999px;
@@ -459,7 +460,7 @@
     }
 
     /* el contenedor grid de los KPIs con class="rejilla-kpis" */
-    RELLENA_AQUI {
+    .rejilla-kpis {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.8rem;
@@ -469,7 +470,7 @@
     }
 
     /* cada tarjeta KPI con class="kpi" */
-    RELLENA_AQUI {
+    .kpi {
       border-radius: 1rem;
       background: rgba(15, 23, 42, 0.96);
       border: 1px solid rgba(75, 85, 99, 0.9);
@@ -477,30 +478,30 @@
     }
 
     /* el texto pequeño dentro del KPI con class="kpi-etiqueta" */
-    RELLENA_AQUI {
+    .kpi-etiqueta {
       font-size: 0.7rem;
       color: var(--color-texto-suave);
     }
 
     /* el valor numérico del KPI con class="kpi-valor" */
-    RELLENA_AQUI {
+    .kpi-valor {
       margin-top: 0.2rem;
       font-size: 0.98rem;
       font-weight: 600;
     }
 
     /* valores KPI que además tienen class="positivo" */
-    RELLENA_AQUI {
+    .kpi-valor.positivo {
       color: var(--color-acento);
     }
 
     /* valores KPI que además tienen class="negativo" */
-    RELLENA_AQUI {
+    .kpi-valor.negativo {
       color: var(--color-peligro);
     }
 
     /* la fila de texto encima de la barra de progreso (class="etiqueta-barra") */
-    RELLENA_AQUI {
+    .etiqueta-barra {
       display: flex;
       justify-content: space-between;
       font-size: 0.74rem;
@@ -511,7 +512,7 @@
     }
 
     /* la barra vacía con class="barra-progreso" */
-    RELLENA_AQUI {
+    .barra-progreso {
       margin-top: 0.35rem;
       height: 7px;
       border-radius: 999px;
@@ -522,7 +523,7 @@
     }
 
     /* la parte rellena de la barra con class="relleno-barra" */
-    RELLENA_AQUI {
+    .relleno-barra {
       position: absolute;
       inset: 0;
       width: 82%;
@@ -531,7 +532,7 @@
     }
 
     /* la tarjeta de reseña/testimonio con class="tarjeta-resena" */
-    RELLENA_AQUI {
+    .tarjeta-resena {
       margin-top: 1rem;
       padding: 0.85rem 1rem;
       border-radius: 1rem;
@@ -543,17 +544,17 @@
     }
 
     /* el texto en negrita dentro de la tarjeta de reseña */
-    RELLENA_AQUI {
+    .tarjeta-resena strong {
       color: #facc15;
     }
 
     /* el encabezado común de sección con class="cabecera-seccion" */
-    RELLENA_AQUI {
+    .cabecera-seccion {
       margin-bottom: 2.3rem;
     }
 
     /* el título de sección con class="titulo-seccion" */
-    RELLENA_AQUI {
+    .titulo-seccion {
       font-size: 1.7rem;
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -561,14 +562,14 @@
     }
 
     /* el texto introductorio de sección con class="texto-intro-seccion" */
-    RELLENA_AQUI {
+    .texto-intro-seccion {
       max-width: 36rem;
       color: var(--color-texto-suave);
       font-size: 0.95rem;
     }
 
     /* la sección de servicios con class="seccion-servicios" */
-    RELLENA_AQUI {
+    .seccion-servicios {
       background:
         radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.16), transparent 55%),
         radial-gradient(circle at 100% 100%, rgba(234, 179, 8, 0.16), transparent 60%),
@@ -578,14 +579,14 @@
     }
 
     /* el grid de servicios con class="rejilla-servicios" */
-    RELLENA_AQUI {
+    .rejilla-servicios {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1.3rem;
     }
 
     /* cada tarjeta de servicio con class="tarjeta-servicio" */
-    RELLENA_AQUI {
+    .tarjeta-servicio {
       border-radius: 1.2rem;
       background: rgba(15, 23, 42, 0.98);
       border: 1px solid var(--color-borde-suave);
@@ -604,7 +605,7 @@
     }
 
     /* el ::before de cada tarjeta de servicio (brillo al hover) */
-    RELLENA_AQUI {
+    .tarjeta-servicio::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -615,24 +616,24 @@
     }
 
     /* el icono grande de cada servicio con class="icono-servicio" */
-    RELLENA_AQUI {
+    .icono-servicio {
       font-size: 1.5rem;
       margin-bottom: 0.25rem;
     }
 
     /* el título de servicio con class="titulo-servicio" */
-    RELLENA_AQUI {
+    .titulo-servicio {
       font-weight: 600;
       font-size: 0.98rem;
     }
 
     /* el texto de descripción de servicio con class="descripcion-servicio" */
-    RELLENA_AQUI {
+    .descripcion-servicio {
       color: var(--color-texto-suave);
     }
 
     /* la parte inferior de la tarjeta de servicio con class="pie-servicio" */
-    RELLENA_AQUI {
+    .pie-servicio {
       margin-top: auto;
       padding-top: 0.6rem;
       border-top: 1px dashed rgba(75, 85, 99, 0.9);
@@ -641,7 +642,7 @@
     }
 
     /* las tarjetas de servicio al pasar el ratón por encima */
-    RELLENA_AQUI {
+    .tarjeta-servicio:hover {
       transform: translateY(-4px);
       background: #020617;
       box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
@@ -649,12 +650,12 @@
     }
 
     /* el ::before de las tarjetas de servicio cuando están en hover */
-    RELLENA_AQUI {
+    .tarjeta-servicio:hover::before {
       opacity: 1;
     }
 
     /* la etiqueta verde de IA con class="etiqueta-ia" */
-    RELLENA_AQUI {
+    .etiqueta-ia {
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
@@ -667,19 +668,20 @@
     }
 
     /* todos los párrafos y también el elemento con id="resumen-destacado" */
-    RELLENA_AQUI {
+    p,
+    #resumen-destacado {
       line-height: 1.7;
     }
 
     /* la sección de IA con class="seccion-ia" */
-    RELLENA_AQUI {
+    .seccion-ia {
       background:
         radial-gradient(circle at 0 0, rgba(99, 102, 241, 0.2), transparent 60%),
         var(--color-fondo);
     }
 
     /* el grid de IA con class="fila-ia" */
-    RELLENA_AQUI {
+    .fila-ia {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       gap: 2.7rem;
@@ -687,19 +689,19 @@
     }
 
     /* todos los párrafos dentro de la sección de IA */
-    RELLENA_AQUI {
+    .seccion-ia p {
       max-width: 38rem;
     }
 
     /* la lista de puntos de IA con class="lista-ia" */
-    RELLENA_AQUI {
+    .lista-ia {
       display: grid;
       gap: 1rem;
       margin-top: 1.6rem;
     }
 
     /* cada elemento de esa lista con class="item-ia" */
-    RELLENA_AQUI {
+    .item-ia {
       display: flex;
       gap: 0.6rem;
       padding: 0.78rem 0.95rem;
@@ -710,7 +712,7 @@
     }
 
     /* el punto luminoso de cada item de IA con class="punto-ia" */
-    RELLENA_AQUI {
+    .punto-ia {
       width: 8px;
       height: 8px;
       border-radius: 999px;
@@ -721,27 +723,27 @@
     }
 
     /* el texto final de la sección IA con class="nota-ia" */
-    RELLENA_AQUI {
+    .nota-ia {
       margin-top: 1.1rem;
       font-size: 0.85rem;
       color: var(--color-texto-suave);
     }
 
     /* la sección de proyectos con class="seccion-proyectos" */
-    RELLENA_AQUI {
+    .seccion-proyectos {
       background: radial-gradient(circle at 100% 0, rgba(236, 72, 153, 0.15), transparent 55%),
         #020617;
     }
 
     /* el grid de proyectos con class="lista-proyectos" */
-    RELLENA_AQUI {
+    .lista-proyectos {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.3rem;
     }
 
     /* cada tarjeta de proyecto con class="item-proyecto" */
-    RELLENA_AQUI {
+    .item-proyecto {
       border-radius: 1.2rem;
       background: rgba(15, 23, 42, 0.98);
       border: 1px solid var(--color-borde-suave);
@@ -757,7 +759,7 @@
     }
 
     /* la franja superior de cada proyecto con class="cabecera-proyecto" */
-    RELLENA_AQUI {
+    .cabecera-proyecto {
       height: 92px;
       background:
         radial-gradient(circle at 0 0, rgba(94, 234, 212, 0.35), transparent 60%),
@@ -766,7 +768,7 @@
     }
 
     /* el contenido de texto de cada proyecto con class="contenido-proyecto" */
-    RELLENA_AQUI {
+    .contenido-proyecto {
       padding: 0.95rem 1.05rem 1.05rem;
       display: flex;
       flex-direction: column;
@@ -774,26 +776,26 @@
     }
 
     /* el título de cada proyecto con class="titulo-proyecto" */
-    RELLENA_AQUI {
+    .titulo-proyecto {
       font-weight: 600;
       font-size: 0.98rem;
     }
 
     /* la etiqueta descriptiva del proyecto con class="etiqueta-proyecto" */
-    RELLENA_AQUI {
+    .etiqueta-proyecto {
       font-size: 0.8rem;
       color: var(--color-texto-suave);
     }
 
     /* el dato de resultado del proyecto con class="dato-proyecto" */
-    RELLENA_AQUI {
+    .dato-proyecto {
       margin-top: 0.35rem;
       color: var(--color-acento);
       font-size: 0.85rem;
     }
 
     /* cada item de proyecto cuando está en hover */
-    RELLENA_AQUI {
+    .item-proyecto:hover {
       transform: translateY(-4px);
       box-shadow: 0 24px 55px rgba(15, 23, 42, 0.95);
       border-color: rgba(129, 140, 248, 0.95);
@@ -801,24 +803,24 @@
     }
 
     /* cualquier .item-proyecto que venga inmediatamente después de otro .item-proyecto */
-    RELLENA_AQUI {
+    .item-proyecto+.item-proyecto {
       border-style: solid;
     }
 
     /* elementos con class="porcentaje" a los que se les añade el símbolo % en ::after */
-    RELLENA_AQUI {
+    .porcentaje::after {
       content: "%";
       margin-left: 0.1rem;
     }
 
     /* la sección de contacto con class="seccion-contacto" */
-    RELLENA_AQUI {
+    .seccion-contacto {
       background: #020617;
       border-top: 1px solid rgba(31, 41, 55, 0.9);
     }
 
     /* el bloque de contacto con id="bloque-contacto" */
-    RELLENA_AQUI {
+    #bloque-contacto {
       border-radius: 1.6rem;
       border: 1px solid rgba(55, 65, 81, 0.95);
       background:
@@ -833,13 +835,13 @@
     }
 
     /* el formulario de contacto con class="formulario-contacto" */
-    RELLENA_AQUI {
+    .formulario-contacto {
       display: grid;
       gap: 0.9rem;
     }
 
     /* cada campo del formulario con class="campo-formulario" */
-    RELLENA_AQUI {
+    .campo-formulario {
       display: flex;
       flex-direction: column;
       gap: 0.28rem;
@@ -847,12 +849,14 @@
     }
 
     /* todas las etiquetas de formulario <label> */
-    RELLENA_AQUI {
+    .campo-formulario label {
       color: var(--color-texto-suave);
     }
 
     /* todos los input, select y textarea del formulario */
-    RELLENA_AQUI {
+    .campo-formulario input,
+    .campo-formulario select,
+    .campo-formulario textarea {
       border-radius: 0.85rem;
       border: 1px solid rgba(55, 65, 81, 1);
       background: rgba(15, 23, 42, 0.97);
@@ -869,12 +873,14 @@
     }
 
     /* los textarea del formulario (para que sean más altos) */
-    RELLENA_AQUI {
+    .campo-formulario textarea {
       min-height: 120px;
     }
 
     /* input, select y textarea cuando tienen enfoque (focus) */
-    RELLENA_AQUI {
+    .campo-formulario input:focus,
+    .campo-formulario select:focus,
+    .campo-formulario textarea:focus {
       border-color: rgba(129, 140, 248, 1);
       box-shadow:
         0 0 0 1px rgba(129, 140, 248, 0.9),
@@ -883,19 +889,19 @@
     }
 
     /* textos de ayuda pequeños bajo los campos con class="texto-ayuda" */
-    RELLENA_AQUI {
+    .texto-ayuda {
       font-size: 0.75rem;
       color: var(--color-texto-suave);
     }
 
     /* el bloque lateral de info de contacto con class="info-contacto" */
-    RELLENA_AQUI {
+    .info-contacto {
       font-size: 0.86rem;
       color: var(--color-texto-suave);
     }
 
     /* la lista de datos de contacto con class="lista-contacto" */
-    RELLENA_AQUI {
+    .lista-contacto {
       list-style: none;
       margin-top: 0.95rem;
       display: grid;
@@ -904,18 +910,18 @@
     }
 
     /* cada li dentro de .lista-contacto */
-    RELLENA_AQUI {
+    .lista-contacto li {
       display: flex;
       justify-content: space-between;
     }
 
     /* el último span dentro de cada li de .lista-contacto (valor principal) */
-    RELLENA_AQUI {
+    .lista-contacto li span:last-child {
       color: var(--color-texto);
     }
 
     /* el pie de página con class="pie" */
-    RELLENA_AQUI {
+    .pie {
       border-top: 1px solid rgba(31, 41, 55, 0.9);
       padding: 1.7rem 0 2rem;
       font-size: 0.8rem;
@@ -924,7 +930,7 @@
     }
 
     /* la fila interior del pie de página con class="fila-pie" */
-    RELLENA_AQUI {
+    .fila-pie {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -933,25 +939,27 @@
     }
 
     /* la lista de enlaces del pie de página con class="menu-pie" */
-    RELLENA_AQUI {
+    .menu-pie {
       display: flex;
       gap: 1.2rem;
       flex-wrap: wrap;
     }
 
     /* los enlaces dentro de .menu-pie cuando están en hover */
-    RELLENA_AQUI {
+    .menu-pie a:hover {
       color: var(--color-texto);
     }
 
     /* el estilo del texto seleccionado por el usuario (cualquier parte de la página) */
-    RELLENA_AQUI {
+    ::selection {
       background: #a855f7;
       color: #f9fafb;
     }
 
     /* los li que son hijos directos de .menu-principal (elementos del menú) */
-    RELLENA_AQUI {}
+    .menu-principal li {
+      /* estilos para los elementos del menú */
+    }
 
     /* ==== MEDIA QUERIES ==== */
 
@@ -959,22 +967,25 @@
     @media (max-width: 960px) {
 
       /* el .contenedor dentro de .seccion-inicio, la .fila-ia y el #bloque-contacto */
-      RELLENA_AQUI {
+      .contenedor,
+      .fila-ia,
+      #bloque-contacto {
         grid-template-columns: minmax(0, 1fr);
       }
 
       /* el bloque de contacto con id="bloque-contacto" en pantallas medianas */
-      RELLENA_AQUI {
+      .formulario-contacto,
+      .info-contacto {
         padding: 1.2rem 1.1rem;
       }
 
       /* el grid de servicios en pantallas medianas (2 columnas) */
-      RELLENA_AQUI {
+      .grid-servicios {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       /* el grid de proyectos en pantallas medianas (2 columnas) */
-      RELLENA_AQUI {
+      .grid-proyectos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
