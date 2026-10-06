@@ -153,7 +153,7 @@
     }
 
     /* los enlaces dentro de nav que está dentro de .barra-navegacion */
-    .barra-navegacion nav a {
+    .barra-navegacion a {
       color: var(--color-texto-suave);
       position: relative;
       padding-bottom: 0.15rem;
@@ -161,7 +161,7 @@
     }
 
     /* el pseudo-elemento ::after de esos enlaces (la línea animada) */
-    .barra-navegacion nav a::after {
+    .barra-navegacion a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -174,13 +174,13 @@
     }
 
     /* los enlaces del menú cuando el ratón pasa por encima */
-    .barra-navegacion nav a:hover {
+    .barra-navegacion a:hover {
       color: var(--color-texto);
       transform: translateY(-1px);
     }
 
     /* el ::after de esos enlaces cuando están en hover (subrayado completo) */
-    .barra-navegacion nav a:hover::after {
+    .barra-navegacion a:hover::after {
       width: 100%;
     }
 
@@ -269,7 +269,7 @@
     }
 
     /* el span con class="etiqueta-seccion" */
-    .etiqueta-seccion {
+    span.etiqueta-seccion {
       display: inline-flex;
       align-items: center;
       padding: 0.25rem 0.9rem;
