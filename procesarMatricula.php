@@ -32,4 +32,5 @@ foreach ($asignaturas as $asignatura) {
 // TODO 4 (ampliación): genera una tabla de lunes a viernes y colorea las celdas
 //    de los tramos que correspondan a las asignaturas seleccionadas.
 // En horario.php están los datos iniciales; la lógica debes escribirla aquí.
-echo 'Pendiente de implementar el ejercicio 05.';
+
+    echo 'Pendiente de implementar el ejercicio 05.';
