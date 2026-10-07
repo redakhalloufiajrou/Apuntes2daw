@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva agencia de viajes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+        }
+
+        .contenedor {
+            width: 30%;
+            margin: 5px auto;
+            padding: 30px 25px;
+            border: 2px solid red;
+        }
+
+        h1 {
+            font-size: 14px;
+            color: red;
+            margin-bottom: 25px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fila {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+        }
+
+        .fila>label:first-child {
+            width: 50%;
+            padding-top: 3px;
+        }
+
+        .campo {
+            width: 50%;
+        }
+
+        select,
+        input[type="date"],
+        input[type="text"],
+        input[type="email"] {
+            width: 132px;
+            height: 18px;
+            font-size: 11px;
+        }
+
+        textarea {
+            width: 190px;
+            height: 68px;
+            resize: none;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .opciones {
+            display: flex;
+            gap: 5px;
+        }
+
+        .opciones label {
+            display: inline;
+            margin: 0;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 3px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 3px;
+        }
+
+        button {
+            font-size: 11px;
+            padding: 1px 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <main class="contenedor">
+
+        <h1>RESERVA AGENCIA VIAJES:</h1>
+
+        <form>
+
+            <div class="fila">
+
+                <label for="destino">DESTINO *</label>
+
+                <div class="campo">
+                    <select name="destino" id="destino" required>
+                        <option value="" selected disabled>
+                            Seleccionar ciudad
+                        </option>
+
+                        <option value="granada">Granada</option>
+                        <option value="malaga">Málaga</option>
+                        <option value="cadiz">Cádiz</option>
+                        <option value="madrid">Madrid</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="fecha">FECHA DE SALIDA</label>
+
+                <div class="campo">
+
+                    <input type="date" id="fecha" name="fecha" required>
+
+                    <label>
+                        <input type="checkbox" name="flexible">
+                        Soy flexible con la fecha
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="adultos">NÚMERO DE ADULTOS *</label>
+
+                <div class="campo">
+
+                    <select name="adultos" id="adultos" required>
+                        <option value="" selected disabled>
+                            Seleccionar adultos
+                        </option>
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 o más</option>
+                    </select>
+
+                    <label>
+                        <input type="checkbox" name="ninos">
+                        Viajamos con niños
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label>EDAD ADULTOS</label>
+
+                <div class="campo opciones">
+
+                    <label>
+                        <input type="radio" name="edad" value="18-30">
+                        18-30
+                    </label>
+
+                    <label>
+                        <input type="radio" name="edad" value="31-50">
+                        31-50
+                    </label>
+
+                    <label>
+                        <input type="radio" name="edad" value="50+">
+                        50+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label>TIPO DE VIAJE</label>
+
+                <div class="campo">
+
+                    <label>
+                        <input type="checkbox" name="viaje">
+                        Viaje programado
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label>ACTIVIDADES</label>
+
+                <div class="campo">
+
+                    <label>
+                        <input type="checkbox" name="actividad">
+                        Cruceros en galápagos
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="actividad">
+                        Tours combinados, hotel-yate
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="actividad">
+                        Tours empaquetados
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label>TIPO DE ACOMODACIÓN *</label>
+
+                <div class="campo opciones">
+
+                    <label>
+                        <input type="radio" name="hotel" value="5">
+                        5 estrellas
+                    </label>
+
+                    <label>
+                        <input type="radio" name="hotel" value="4">
+                        4 estrellas
+                    </label>
+
+                    <label>
+                        <input type="radio" name="hotel" value="3">
+                        3 estrellas
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label>OTROS SERVICIOS</label>
+
+                <div class="campo">
+
+                    <label>
+                        <input type="checkbox" name="servicios">
+                        Actividades, guías, información
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="servicios">
+                        Transporte
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="viaje">
+                    ¿CUÁL ES EL VIAJE QUE QUISIERAS?
+                </label>
+
+                <div class="campo">
+
+                    <textarea id="viaje" name="viaje"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="fila">
+
+                <label for="nombre">NOMBRE Y APELLIDO *</label>
+
+                <div class="campo">
+
+                    <input type="text" id="nombre" name="nombre" required>
+
+                </div>
+
+            </div>
+
+
+            <div class="fila">
+
+                <label for="email">EMAIL *</label>
+
+                <div class="campo">
+
+                    <input type="email" id="email" name="email" required>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="telefono">TELÉFONO</label>
+
+                <div class="campo">
+
+                    <input type="text" id="telefono" name="telefono">
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="ciudad">CIUDAD</label>
+
+                <div class="campo">
+
+                    <input type="text" id="ciudad" name="ciudad">
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <label for="pais">PAÍS DE RESIDENCIA</label>
+
+                <div class="campo">
+
+                    <input type="text" id="pais" name="pais">
+
+                </div>
+
+            </div>
+
+
+            <div class="fila">
+
+                <label>
+                    Estoy de acuerdo con los<br>
+                    Términos de uso y políticas<br>
+                    de privacidad *
+                </label>
+
+                <div class="campo">
+
+                    <label>
+                        <input type="checkbox" required>
+                        Estoy de acuerdo
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="fila">
+
+                <div class="campo botones">
+
+                    <button type="submit">
+                        Enviar
+                    </button>
+
+                    <button type="reset">
+                        limpiar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
