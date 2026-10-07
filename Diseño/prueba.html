@@ -34,26 +34,48 @@
             position: relative;
             top: 100%;
         }
-        #c1{
+        div{
             background: url("https://picsum.photos/400") center center no-repeat;
         }
         #c1:hover{
             background-position: 50% 0%;
 
         }
-        div::before:hover{
-            top: auto;
-        }
-        div:hover{
+        div:hover::before{
+            top: 0%;
             position: relative;
         }
+        div::before:hover{
+            top: auto;
+            position: relative;
+            overflow: visible;
+        }
+        div:nth-child(2){
+            font-size: 1.5rem;
+            p{
+                position: relative ;
+                top: 100%;
+            }
+            &:hover p{
+                top: 0%;
+            }
+        }
+        div:nth-child(3):hover{
+            transform:scale(1.4);
+        }
+        div:nth-child(4):hover{
+            transform:rotate(90deg) scale(1.4) translateX(50px);
+        }
+        
 
     </style>
 </head>
 <body>
     
     <div id="c1"></div>
-    <div id="c2"></div>
+    <div id="c2">
+        <p>Lorem ipsum dolor sit amet </p>
+    </div>
     <div id="c3"></div>
     <div id="c4"></div>
     <div id="c5"></div>
