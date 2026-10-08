@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Concesionario</title></head>
+<body>
+    <h1>Configura tu coche</h1>
+    <form action="procesarConcesionario.php" method="POST">
+        <fieldset>
+            <legend>Modelo (obligatorio)</legend>
+            <label><input type="radio" name="Modelo" value="Compacto" required> Compacto</label>
+            <label><input type="radio" name="Modelo" value="Sedán" required> Sedán</label>
+            <label><input type="radio" name="Modelo" value="SUV" required> SUV</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Motor</legend>
+            <label><input type="radio" name="Motor" value="Gasolina" required> Gasolina 1.6L</label>
+            <label><input type="radio" name="Motor" value="Diesel" required> Diesel 2.0L</label>
+            <label><input type="radio" name="Motor" value="Eléctrico" required> Eléctrico 75 kWh</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Colores</legend>
+            <label><input type="radio" name="Colores" value="Blanco" required> Blanco</label>
+            <label><input type="radio" name="Colores" value="Negro" required> Negro</label>
+            <label><input type="radio" name="Colores" value="Azul" required> Azul</label>
+            <label><input type="radio" name="Colores" value="Metálico" required> Metálico</label>
+            <label><input type="radio" name="Colores" value="Rojo" required> Rojo</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Llantas</legend>
+            <label><input type="radio" name="Llantas" value="16Aleación" required> 16" Aleación</label>
+            <label><input type="radio" name="Llantas" value="18Aleación" required> 18" Aleación</label>
+            <label><input type="radio" name="Llantas" value="Deportivo" required> 20" Deportivo</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Equipamientos</legend>
+            <label><input type="radio" name="Equipamientos" value="Básico" required> Básico</label>
+            <label><input type="radio" name="Equipamientos" value="Confort" required> Confort</label>
+            <label><input type="radio" name="Equipamientos" value="Premium" required> Premium</label>
+        </fieldset>
+
+        <!-- TODO: añade un fieldset de checkboxes name="Accesorios[]" con los ocho accesorios. -->
+        <fieldset>
+            <legend>Accesorios</legend>
+            <label><input type="checkbox" name="Accesorios[]" value="">Techo Panorámico</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Asientos de Cuero</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Sistema de Sonido Premium</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Cámara de 360°</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Paquete Deportivo</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Control de Crucero Adaptativo</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Sensores de Aparcamiento</label><br>
+            <label><input type="checkbox" name="Accesorios[]" value="">Maletero Eléctrico</label><br>
+        </fieldset>
+        <label>Cantidad (1–5): <input type="number" name="cantidad" min="1" max="5" value="1" required></label>
+        <!-- TODO: añade el campo opcional de texto name="codigo_descuento". -->
+        <br><label>Codigo de descuento <input type="text" name="codigo_descuento"></label>
+
+        <br><button type="submit">Calcular precio</button>
+    </form>
+</body>
+</html>
