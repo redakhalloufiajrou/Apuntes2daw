@@ -22,6 +22,8 @@ if ($modelo === '' || !array_key_exists($modelo, $componentes['Modelo'])) {
 if ($motor === '' || !array_key_exists($motor, $componentes['Motor'])) {
     exit('Debes indicar el motor para completar el formulario');
 }
+
+
 if ($colores === '' || !array_key_exists($colores, $componentes['Color'])) {
     exit('Debes indicar el color para completar el formulario');
 }
@@ -39,7 +41,10 @@ if ($cantidad !== false) {
     exit('Debes indicar la cantidad para completar el formulario');
 }
 // TODO 2: recoge los accesorios seleccionados (pueden ser cero) y la cantidad (1–5).
-
+$accesorios = $_POST['Acessorios'] ?? [];
+if (!is_array($accesorios)) {   
+    exit('La seleccion de acessorios no es valida');
+}
 
 
 

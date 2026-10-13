@@ -20,7 +20,7 @@ $componentes = [
     "Llantas" => [
         "16\" Aleación" => 500,
         "18\" Aleación" => 1000,
-        "20\" Deportivo" => 1500
+        "20\"Deportivo" => 1500
     ],
     "Equipamiento" => [
         "Básico" => 0,
