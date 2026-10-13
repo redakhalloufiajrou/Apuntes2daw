@@ -1,63 +1,169 @@
 <?php
-require_once __DIR__ . '/componentes.php'; // Datos iniciales de opciones, precios y descuentos.
+require_once __DIR__ . '/componentes.php';
 
 // EJERCICIO 06.
-
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     http_response_code(405);
     exit('Envía el formulario mediante POST.');
 }
 
+function mostrar($texto): string {
+    return htmlspecialchars((string) $texto, ENT_QUOTES, 'UTF-8');
+}
+
+function euros($importe): string {
+    return number_format($importe, 2, ',', '.') . ' €';
+}
+
+// Recoger los datos del formulario.
 $modelo = trim((string) ($_POST['Modelo'] ?? ''));
 $motor = trim((string) ($_POST['Motor'] ?? ''));
-$colores = trim((string) ($_POST['Colores'] ?? ''));
+$color = trim((string) ($_POST['Colores'] ?? ''));
 $llantas = trim((string) ($_POST['Llantas'] ?? ''));
-$equipamientos = trim((string) ($_POST['Equipamientos'] ?? ''));
-$cantidad = filter_var($_POST['cantidad'] ?? null, FILTER_VALIDATE_FLOAT);
+$equipamiento = trim((string) ($_POST['Equipamientos'] ?? ''));
 
+// Validar el modelo.
 if ($modelo === '' || !array_key_exists($modelo, $componentes['Modelo'])) {
-    exit('Debes indicar el modelo para completar el formulario');
+    exit('Debes indicar un modelo válido.');
 }
+
+// Validar el motor.
 if ($motor === '' || !array_key_exists($motor, $componentes['Motor'])) {
-    exit('Debes indicar el motor para completar el formulario');
+    exit('Debes indicar un motor válido.');
 }
 
-
-if ($colores === '' || !array_key_exists($colores, $componentes['Color'])) {
-    exit('Debes indicar el color para completar el formulario');
+// Validar el color.
+if ($color === '' || !array_key_exists($color, $componentes['Color'])) {
+    exit('Debes indicar un color válido.');
 }
+
+// Validar las llantas.
 if ($llantas === '' || !array_key_exists($llantas, $componentes['Llantas'])) {
-    exit('Debes indicar las llantas para completar el formulario');
+    exit('Debes indicar unas llantas válidas.');
 }
-if ($equipamientos === '' || !array_key_exists($equipamientos, $componentes['Equipamiento'])) {
-    exit('Debes indicar los equipamientos para completar el formulario');
+
+// Validar el equipamiento.
+if ($equipamiento === '' || !array_key_exists($equipamiento, $componentes['Equipamiento'])) {
+    exit('Debes indicar un equipamiento válido.');
 }
-if ($cantidad !== false) {
-    if ($cantidad < 1 || $cantidad > 5) {
-        exit('La cantidad debe ser un número entre 1 y 5.');
-    }
-} else {
-    exit('Debes indicar la cantidad para completar el formulario');
+
+// Validar la cantidad: debe ser un entero entre 1 y 5.
+$cantidad = filter_var(
+    $_POST['cantidad'] ?? null,FILTER_VALIDATE_INT,
+    ['options' => ['min_range' => 1, 'max_range' => 5]]
+);
+
+if ($cantidad === false) {
+    exit('La cantidad debe ser un número entero entre 1 y 5.');
 }
-// TODO 2: recoge los accesorios seleccionados (pueden ser cero) y la cantidad (1–5).
+
+// Guardar los componentes seleccionados.
+$seleccion = [
+    'Modelo' => $modelo,
+    'Motor' => $motor,
+    'Color' => $color,
+    'Llantas' => $llantas,
+    'Equipamiento' => $equipamiento
+];
+
+// Recoger y validar los accesorios.
 $accesorios = $_POST['Acessorios'] ?? [];
-if (!is_array($accesorios)) {   
-    exit('La seleccion de acessorios no es valida');
+
+if (!is_array($accesorios)) {
+    exit('La selección de accesorios no es válida.');
 }
 
+foreach ($accesorios as $accesorio) {
+    if (!is_string($accesorio) || !array_key_exists($accesorio, $componentes['Accesorios'])) {
+        exit('Has seleccionado un accesorio no válido.');
+    }
+}
 
+// Evitar accesorios duplicados.
+$accesorios = array_unique($accesorios);
 
+// Validar el código de descuento.
+$codigo = strtoupper(trim((string) ($_POST['codigo_descuento'] ?? '')));
+$descuentoPorcentaje = $codigosDescuento[$codigo] ?? 0;
 
+// Calcular el precio por unidad.
+$precioUnidad = 0;
 
+echo '<!doctype html>';
+echo '<html lang="es">';
+echo '<head>';
+echo '<meta charset="utf-8">';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+echo '<title>Tu coche</title>';
+echo '</head>';
+echo '<body>';
 
+echo '<h1>Resumen de tu coche personalizado</h1>';
+echo '<ul>';
 
+// Mostrar los componentes seleccionados.
+foreach ($seleccion as $grupo => $valor) {
+    $precio = $componentes[$grupo][$valor];
+    $precioUnidad += $precio;
 
+    echo '<li>' . mostrar($grupo) . ': '
+        . mostrar($valor) . ' — '
+        . euros($precio) . '</li>';
+}
 
-// TODO 3: calcula el precio unitario SIN IVA a partir de los precios proporcionados.
-// TODO 4: multiplica por el número de vehículos y aplica el descuento, si es válido.
-// TODO 5: calcula un IVA del 21 % sobre la base una vez descontada la rebaja.
-// TODO 6: genera un resumen con opciones, importes, descuentos, IVA y total.
-// Si el código de descuento no existe, indica que es inválido y no apliques rebaja.
+// Mostrar los accesorios.
+if (empty($accesorios)) {
+    echo '<li>Accesorios: ninguno</li>';
+} else {
+    foreach ($accesorios as $accesorio) {
+        $precio = $componentes['Accesorios'][$accesorio];
+        $precioUnidad += $precio;
 
-echo 'Pendiente de implementar el ejercicio 06.';
+        echo '<li>Accesorio: '
+            . mostrar($accesorio) . ' — '
+            . euros($precio) . '</li>';
+    }
+}
+
+echo '</ul>';
+
+// Calcular los importes.
+$baseInicial = $precioUnidad * $cantidad;
+$rebaja = round($baseInicial * $descuentoPorcentaje / 100, 2);
+$baseFinal = $baseInicial - $rebaja;
+$iva = round($baseFinal * 0.21, 2);
+$totalConIva = $baseFinal + $iva;
+
+// Mostrar el resumen económico.
+echo '<p>Cantidad: ' . $cantidad . '</p>';
+echo '<p>Precio por unidad sin IVA: '
+    . euros($precioUnidad) . '</p>';
+echo '<p>Base inicial sin IVA: '
+    . euros($baseInicial) . '</p>';
+
+if ($codigo !== '') {
+    echo '<p>Código de descuento: '
+        . mostrar($codigo)
+        . ($descuentoPorcentaje > 0
+            ? ' (válido)'
+            : ' (no válido)')
+        . '</p>';
+} else {
+    echo '<p>Código de descuento: no aplicado</p>';
+}
+
+echo '<p>Descuento aplicado: '
+    . euros($rebaja) . '</p>';
+
+echo '<p>Base tras el descuento: '
+    . euros($baseFinal) . '</p>';
+
+echo '<p>IVA (21 %): '
+    . euros($iva) . '</p>';
+
+echo '<h2>Total con IVA: '
+    . euros($totalConIva) . '</h2>';
+
+echo '</body>';
+echo '</html>';

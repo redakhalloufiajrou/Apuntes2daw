@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Concesionario</title></head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Concesionario</title>
+</head>
+
 <body>
     <h1>Configura tu coche</h1>
     <form action="procesarConcesionario.php" method="POST">
@@ -10,7 +15,7 @@
             <label><input type="radio" name="Modelo" value="Sedán" required> Sedán</label>
             <label><input type="radio" name="Modelo" value="SUV" required> SUV</label>
         </fieldset>
-        
+
         <fieldset>
             <legend>Motor</legend>
             <label><input type="radio" name="Motor" value="Gasolina 1.6L" required> Gasolina 1.6L</label>
@@ -29,8 +34,8 @@
 
         <fieldset>
             <legend>Llantas</legend>
-            <label><input type="radio" name="Llantas" value="16 Aleación" required> 16" Aleación</label>
-            <label><input type="radio" name="Llantas" value="18 Aleación" required> 18" Aleación</label>
+            <label><input type="radio" name="Llantas" value="16&quot; Aleación" required> 16" Aleación</label>
+            <label><input type="radio" name="Llantas" value="18&quot; Aleación" required> 18" Aleación</label>
             <label><input type="radio" name="Llantas" value="Deportivo" required> 20" Deportivo</label>
         </fieldset>
 
@@ -60,4 +65,5 @@
         <br><button type="submit">Calcular precio</button>
     </form>
 </body>
+
 </html>
