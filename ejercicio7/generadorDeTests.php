@@ -20,8 +20,6 @@ $numeroDePreguntas = filter_var($_POST['cantidad'] ?? null, FILTER_VALIDATE_INT,
 $preguntas = $_POST['repositorioPreguntas'] ?? [];
 $preguntasAleatorias = (array) array_rand($repositorioPreguntas[$asignaturas], $numeroDePreguntas);
 
-
-
 echo '<!doctype html>';
 echo '<html lang="es">';
 echo '<head>';
@@ -54,7 +52,7 @@ foreach ($preguntasAleatorias as $pregunta) {
 
     foreach ($valor as $respuestas => $textoRespuesta) {
         echo '<br>';
-        echo '<input type="radio" name="pregunta" value=""' . htmlspecialchars((string) $respuestas) . '">'
+        echo '<input type="radio" name="pregunta' . $numero . '" value=""' . htmlspecialchars((string) $respuestas) . '">'
             . htmlspecialchars((string) $textoRespuesta)
             . '</input>';
     }
