@@ -2,12 +2,77 @@
 require_once __DIR__ . '/repositorioPreguntas.php';
 
 // EJERCICIO 07 - PARTE A: GENERACIÓN.
-// TODO 1: exige POST y valida asignatura y numeroDePreguntas (entre 1 y 5).
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {http_response_code(405);
+        exit('Envía el formulario mediante POST.');
+    }
+
+    function mostrar($texto): string {
+    return htmlspecialchars((string) $texto, ENT_QUOTES, 'UTF-8');
+}
+
+$asignaturas = trim((string) ($_POST['asignatura'] ?? ''));
+
+
+//if ($asignaturas === '' || !array_key_exists($asignaturas, $repositorioPreguntas['matematicas' ||'historia' || 'ciencias'])) {
+    //exit('Debes indicar una asiganatura válida.');
+//}
+
+$numeroDePreguntas = filter_var($_POST['cantidad'] ?? null,FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 5]]);
+
 // TODO 2: elige al azar preguntas distintas del repositorio de esa asignatura.
+$preguntas = $_POST['repositorioPreguntas'] ?? [];
+$preguntasAleatorias = (array) array_rand($repositorioPreguntas[$asignaturas], $numeroDePreguntas);
+
+
+
+echo '<!doctype html>';
+echo '<html lang="es">';
+echo '<head>';
+echo '<meta charset="utf-8">';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+echo '<title>Examen teorico</title>';
+echo '</head>';
+echo '<body>';
+
+if ($asignaturas === 'matematicas') {
+    echo '<h1>Preguntas Matematicas</h1>';
+} elseif ($asignaturas === 'historia') {
+    echo '<h1>Preguntas de Historia</h1>';
+} else {
+    echo '<h1>Preguntas de Ciencias</h1>';
+}
+
+$numero = 0;
+
+foreach ($preguntasAleatorias as $pregunta) {
+    $numero++;
+
+    $valor = $repositorioPreguntas[$asignaturas][$pregunta];
+
+    echo '<ol>';
+    echo  $numero . ' - ' . mostrar($pregunta);
+
+
+    foreach ($valor as $respuestas => $textoRespuesta) {
+        echo '<br>';
+        echo '<input type="radio" name="pregunta" value=""' . htmlspecialchars((string)$respuestas) . '">'
+            . htmlspecialchars((string)$textoRespuesta)
+            . '</input>';
+    }
+
+    echo '</ol>';
+}
+
+
+
+echo '</body>';
+echo '</html>';
+
 // TODO 3: genera un formulario HTML POST dirigido a comprobarTest.php.
+
+
 // TODO 4: incluye identificadores de preguntas y opciones de respuesta
 //          (radios) para que el corrector pueda cotejar las respuestas.
 // TODO 5: incorpora información suficiente para conocer qué asignatura
 //          y qué preguntas se han mostrado, sin enviar al cliente las soluciones.
 
-echo 'Pendiente de implementar la generación del ejercicio 07.';

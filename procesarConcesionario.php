@@ -49,10 +49,7 @@ if ($equipamiento === '' || !array_key_exists($equipamiento, $componentes['Equip
 }
 
 // Validar la cantidad: debe ser un entero entre 1 y 5.
-$cantidad = filter_var(
-    $_POST['cantidad'] ?? null,FILTER_VALIDATE_INT,
-    ['options' => ['min_range' => 1, 'max_range' => 5]]
-);
+$cantidad = filter_var($_POST['cantidad'] ?? null,FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 5]]);
 
 if ($cantidad === false) {
     exit('La cantidad debe ser un número entero entre 1 y 5.');
