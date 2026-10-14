@@ -83,6 +83,7 @@ section#banner{
         text-transform: uppercase;
         &:hover{
             background-color: var(--crimson);
+            transform: scale(1.1);
         }
     }
 }
