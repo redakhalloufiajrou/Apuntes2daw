@@ -2,22 +2,19 @@
 require_once __DIR__ . '/repositorioPreguntas.php';
 
 // EJERCICIO 07 - PARTE A: GENERACIÓN.
-if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {http_response_code(405);
-        exit('Envía el formulario mediante POST.');
-    }
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    http_response_code(405);
+    exit('Envía el formulario mediante POST.');
+}
 
-    function mostrar($texto): string {
+function mostrar($texto): string
+{
     return htmlspecialchars((string) $texto, ENT_QUOTES, 'UTF-8');
 }
 
 $asignaturas = trim((string) ($_POST['asignatura'] ?? ''));
 
-
-//if ($asignaturas === '' || !array_key_exists($asignaturas, $repositorioPreguntas['matematicas' ||'historia' || 'ciencias'])) {
-    //exit('Debes indicar una asiganatura válida.');
-//}
-
-$numeroDePreguntas = filter_var($_POST['cantidad'] ?? null,FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 5]]);
+$numeroDePreguntas = filter_var($_POST['cantidad'] ?? null, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1, 'max_range' => 5]]);
 
 // TODO 2: elige al azar preguntas distintas del repositorio de esa asignatura.
 $preguntas = $_POST['repositorioPreguntas'] ?? [];
@@ -33,6 +30,8 @@ echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 echo '<title>Examen teorico</title>';
 echo '</head>';
 echo '<body>';
+
+echo '<form action="comprobarTest.php" method="POST">';
 
 if ($asignaturas === 'matematicas') {
     echo '<h1>Preguntas Matematicas</h1>';
@@ -50,29 +49,28 @@ foreach ($preguntasAleatorias as $pregunta) {
     $valor = $repositorioPreguntas[$asignaturas][$pregunta];
 
     echo '<ol>';
-    echo  $numero . ' - ' . mostrar($pregunta);
+    echo $numero . ' - ' . mostrar($pregunta);
 
 
     foreach ($valor as $respuestas => $textoRespuesta) {
         echo '<br>';
-        echo '<input type="radio" name="pregunta" value=""' . htmlspecialchars((string)$respuestas) . '">'
-            . htmlspecialchars((string)$textoRespuesta)
+        echo '<input type="radio" name="pregunta" value=""' . htmlspecialchars((string) $respuestas) . '">'
+            . htmlspecialchars((string) $textoRespuesta)
             . '</input>';
     }
 
     echo '</ol>';
 }
 
+echo '<input type="hidden" name="asignaturas" value="' .
+    htmlspecialchars($asignaturas) . '">';
 
+echo '<button type="submit">Comprobar test</button>';
+echo '</form>';
 
 echo '</body>';
 echo '</html>';
 
-// TODO 3: genera un formulario HTML POST dirigido a comprobarTest.php.
 
 
-// TODO 4: incluye identificadores de preguntas y opciones de respuesta
-//          (radios) para que el corrector pueda cotejar las respuestas.
-// TODO 5: incorpora información suficiente para conocer qué asignatura
-//          y qué preguntas se han mostrado, sin enviar al cliente las soluciones.
 
