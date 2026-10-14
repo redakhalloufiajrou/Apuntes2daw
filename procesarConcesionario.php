@@ -153,17 +153,13 @@ if ($codigo !== '') {
     echo '<p>Código de descuento: no aplicado</p>';
 }
 
-echo '<p>Descuento aplicado: '
-    . euros($rebaja) . '</p>';
+echo '<p>Descuento aplicado: '. euros($rebaja) . '</p>';
 
-echo '<p>Base tras el descuento: '
-    . euros($baseFinal) . '</p>';
+echo '<p>Base tras el descuento: '. euros($baseFinal) . '</p>';
 
-echo '<p>IVA (21 %): '
-    . euros($iva) . '</p>';
+echo '<p>IVA (21 %): '. euros($iva) . '</p>';
 
-echo '<h2>Total con IVA: '
-    . euros($totalConIva) . '</h2>';
+echo '<h2>Total con IVA: '. euros($totalConIva) . '</h2>';
 
 echo '</body>';
 echo '</html>';
