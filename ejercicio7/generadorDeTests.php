@@ -52,7 +52,7 @@ foreach ($preguntasAleatorias as $pregunta) {
 
     foreach ($valor as $respuestas => $textoRespuesta) {
         echo '<br>';
-        echo '<input type="radio" name="pregunta' . $numero . '" value=""' . htmlspecialchars((string) $respuestas) . '">'
+        echo '<input type="radio" name="pregunta' . [$numero] .'" value=""' . htmlspecialchars((string) $respuestas) . '">'
             . htmlspecialchars((string) $textoRespuesta)
             . '</input>';
     }
