@@ -84,3 +84,33 @@ section#banner{
     }
 }
 
+section#info{
+    margin: auto;
+    padding: 4%;
+    width: 40%;
+    text-align: center;
+    
+    img{
+        margin: 20px;
+        width: 8%;
+    }
+}
+
+section#servicios{
+    margin: auto;
+    padding: 50px 0px;
+    background-color: #329e9c;
+    text-align: center;
+    h3{
+        font-size: 25px;
+        color: white;
+    }
+    .articulos{
+        padding: 50px;
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
