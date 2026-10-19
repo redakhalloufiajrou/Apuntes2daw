@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+h1, h2, h3{
+    font-family: "Roboto Slab", serif;
+}
+body, html{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+}
+header#header{
+    max-width: 60%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    nav.menu{
+        a{
+            width: 10%;
+            color: var(--negro);
+            text-transform: uppercase;
+            font-weight: 900;
+            /* margin-left: 20px; */
+            padding: 0 10px;
+            margin: 0 1px;
+
+            &#botonLogin{
+                background-color: #329e9c;
+                color: white;
+                border-radius: 20px;
+                padding: 15px 15px;
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+        a:hover{
+                color: #329e9c;
+            }
+    }
+}
+
+section#banner{
+    width: 100%;
+    min-height: 60vh;
+    background: url(../img/fondo.jpg) no-repeat center center / cover ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    flex-direction: column;
+    text-align: center;
+    
+    h1{
+        font-size: 5rem;
+    }
+
+    p{
+        font-size: 1.5rem;
+        max-width: 80%;
+        margin: 5px 0;
+    }
+
+    a{
+        border: solid 1px white;
+        border-radius: 20px;
+        color: white;
+        padding: 10px 10px;
+        &:hover{
+            background-color: var(--crimson);
+            transform: scale(1.1);
+        }
+    }
+}
+
+section#info{
+    margin: auto;
+    padding: 4%;
+    width: 40%;
+    text-align: center;
+    
+    img{
+        margin: 20px;
+        width: 8%;
+    }
+}
+
+section#servicios{
+    margin: auto;
+    padding: 50px 0px;
+    background-color: #329e9c;
+    text-align: center;
+    h3{
+        font-size: 25px;
+        color: white;
+    }
+    .articulos{
+        padding: 50px;
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
