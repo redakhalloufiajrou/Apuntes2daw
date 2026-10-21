@@ -169,6 +169,10 @@ footer#footer{
             margin: 0 4px;
             text-align: center;
             line-height: 45px;
+            &:hover{
+                background-color: black;
+                transform: scale(1.1);
+            }
     }
     p{
         color: #73797e;
