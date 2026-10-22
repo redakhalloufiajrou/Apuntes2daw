@@ -1,32 +1,37 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: all .5s;
 }
-h1, h2, h3{
+
+h1, h2, h3 {
     font-family: "Roboto Slab", serif;
 }
-body, html{
+
+body, html {
     font-family: "Roboto", sans-serif;
     font-size: 14px;
 }
-img{
+
+img {
     max-width: 100%;
 }
-a{
+
+a {
     text-decoration: none;
 }
-header#header{
+
+header#header {
     max-width: 60%;
     margin: auto;
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    nav.menu{
-        a{
+
+    nav.menu {
+        a {
             width: 10%;
             color: var(--negro);
             text-transform: uppercase;
@@ -35,89 +40,102 @@ header#header{
             padding: 0 10px;
             margin: 0 1px;
 
-            &#botonLogin{
+            &#botonLogin {
                 background-color: #329e9c;
                 color: white;
                 border-radius: 20px;
                 padding: 15px 15px;
-                &:hover{
+
+                &:hover {
                     color: black;
                 }
             }
         }
-        a:hover{
-                color: #329e9c;
-            }
+
+        a:hover {
+            color: #329e9c;
+        }
     }
 }
 
-section#banner{
+section#banner {
     width: 100%;
     min-height: 60vh;
-    background: url(../img/fondo.jpg) no-repeat center center / cover ;
+    background: url(../img/fondo.jpg) no-repeat center center / cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
     flex-direction: column;
     text-align: center;
-    
-    h1{
+
+    h1 {
         font-size: 5rem;
     }
 
-    p{
+    p {
         font-size: 1.5rem;
         max-width: 80%;
         margin: 5px 0;
     }
 
-    a{
+    a {
         border: solid 1px white;
         border-radius: 20px;
         color: white;
         padding: 10px 10px;
-        &:hover{
+
+        &:hover {
             background-color: var(--crimson);
             transform: scale(1.1);
         }
     }
 }
 
-section#info{
+section#info {
     margin: auto;
     padding: 4%;
     width: 40%;
     text-align: center;
-    
-    img{
+
+    img {
         margin: 20px;
         width: 8%;
     }
 }
-section#servicios{
+
+section#servicios {
     margin: auto;
     padding: 50px 0px;
     background-color: #329e9c;
     text-align: center;
-    h3{
+
+    h3 {
         font-size: 40px;
         color: white;
     }
-    div{
+
+    div {
         padding: 4%;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 4%;
-        article{
+
+        article {
             width: 6%;
-            img{
+            @media screen and (max-width: 768px) {
+                
+            }
+
+            img {
                 border: solid 2px white;
                 padding: 30px;
                 border-radius: 70%;
+
             }
-            p{
+
+            p {
                 padding: 4px;
                 color: white;
             }
@@ -126,55 +144,62 @@ section#servicios{
 
 }
 
-section#masInfo{
+section#masInfo {
     width: 40%;
     padding-top: 7%;
     margin: auto;
     display: flex;
     justify-content: end;
-    div>h4{
+
+    div>h4 {
         text-transform: uppercase;
     }
-    div>p{
+
+    div>p {
         padding: 5%;
         text-align: left;
         margin-bottom: 20px;
     }
-    div>a{
+
+    div>a {
         margin: 3%;
         padding-top: 2px;
         background-color: #329e9c;
         color: white;
         border-radius: 50px;
         padding: 8px 8px;
-            &:hover{
-                color: black;
-            }
+
+        &:hover {
+            color: black;
+        }
     }
 }
 
-footer#footer{
+footer#footer {
     background: #42474b;
     padding: 3%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    a{
-            border: solid 1px white;
-            border-radius: 50%;
-            display: inline-block;
-            width: 45px; 
-            height: 45px;
-            color: #ffffff;
-            margin: 0 4px;
-            text-align: center;
-            line-height: 45px;
-            &:hover{
-                background-color: black;
-                transform: scale(1.1);
-            }
+
+    a {
+        border: solid 1px white;
+        border-radius: 50%;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        color: #ffffff;
+        margin: 0 4px;
+        text-align: center;
+        line-height: 45px;
+
+        &:hover {
+            background-color: black;
+            transform: scale(1.1);
+        }
     }
-    p{
+
+    p {
         color: #73797e;
     }
 }
