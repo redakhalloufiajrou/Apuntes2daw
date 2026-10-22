@@ -1,0 +1,74 @@
+:root {
+    --negro: black;
+    --blanco: white;
+    --salmon: hsl(7, 99%, 70%);
+    --amarillo: hsl(51, 100%, 49%);
+    --cyanOscuro: hsl(167, 40%, 24%);
+    --cianOscuro: hsl(198, 62%, 26%);
+    --azulOscuro: hsl(168, 34%, 41%);
+    --azul: rgb(0, 162, 255);
+
+    --azulDesaturado: hsl(212, 27%, 19%);
+    --azulGrisáceoMuyOscuro: hsl(213, 9%, 39%);
+    --azulGrisáceoOscuro: hsl(232, 10%, 55%);
+    --azulGrisáceo: hsl(210, 4%, 67%);
+
+}
+
+body {
+    font-size: 18px;
+    font-family: "Barlow", serif;
+    font-weight: 600;
+}
+
+
+header#header {
+
+    min-height: 80vh;
+    background: var(--azul) url(../images/desktop/image-header.jpg) no-repeat center 100%;
+
+    nav {
+        background-color: transparent;
+
+        a {
+            color: var(--blanco);
+            text-transform: initial;
+            margin: 15px;
+        }
+
+        .nav-link.active {
+            font-family: "Fraunces", serif;
+            background-color: var(--blanco);
+            color: var(--negro);
+            padding: 3px;
+            width: 19%;
+            text-transform: uppercase;
+            border-radius: 30%;
+        }
+    }
+
+    .container2 {
+        text-align: center;
+        min-height: 80vh;
+        align-content: start;
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+}
+
+main#main {
+    background-color: var(--blanco);
+    color: var(--negro);
+
+    div>div>img{
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
+    }
+
+}
