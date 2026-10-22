@@ -1,7 +1,7 @@
 :root {
     --negro: black;
     --blanco: white;
-    --gris: grey;
+    --gris: #95a5a6;
     --turquesa: turquoise;
     --rojo: red;
 
@@ -67,7 +67,9 @@ main#home {
         h3 {
             text-transform: uppercase;
         }
-
+        p{
+            color: var(--gris);
+        }
         img {
             width: 100%;
         }
@@ -75,6 +77,7 @@ main#home {
 
     section#soporte {
         width: 100%;
+        min-height: 50vh;
         max-width: 1100px;
         margin: 0 auto;
         padding: 40px 20px;
@@ -83,20 +86,15 @@ main#home {
             text-align: center;
             margin-bottom: 50px;
 
-            h2 {
+            h3 {
                 margin: 0 0 10px 0;
                 font-size: 22px;
                 font-weight: 700;
                 color: #2c3e50;
                 letter-spacing: 1px;
+                text-transform: uppercase;
             }
 
-            .linea-decorativa {
-                width: 40px;
-                height: 3px;
-                background-color: #1abc9c;
-                margin: 0 auto;
-            }
         }
 
         .soporte-grid {
@@ -129,15 +127,20 @@ main#home {
                 margin: 0;
                 font-size: 13px;
                 line-height: 1.5;
-                color: #95a5a6;
+                color: var(--gris);
             }
         }
     }
 
     section#equipo {
-        min-height: 80vh;
+        min-height: 100vh;
         align-content: center;
         text-align: center;
+        
+
+        h3{
+            text-transform: uppercase;
+        }
 
         div>img {
             width: 100%;
@@ -150,17 +153,24 @@ main#home {
             font-weight: bold;
         }
 
-        div>p {
+        div>p{
+            color: var(--gris);
+        }
+
+        div.row+div.row{
+            margin-bottom: 200px;
+            p{
             color: var(--gris);
             margin-bottom: 15px;
+            font-style: italic;
+            }
         }
     }
+}
 
-    footer#footer{
-        min-height: 30vh;
+footer#footer{
+        min-height: 20vh;
         align-content: center;
         text-align: center;
         background-color: var(--turquesa);
     }
-
-}
