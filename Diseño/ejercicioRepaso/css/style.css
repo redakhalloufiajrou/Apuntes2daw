@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+header#header {
+    background-color: #F97316;
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(235, 104, 28, 0.753);
+
+    @media screen and (max-width: 768px) {
+        max-width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo>a>img {
+        max-width: 7%;
+
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+        }
+
+        a {
+            color: black;
+            text-transform: uppercase;
+            padding: 0 10px;
+            margin: 0 5px;
+
+            &:hover {
+                transform: scale(1.2);
+                transition: all .5s;
+            }
+        }
+    }
+}
+
+main#main {
+    h1{
+        background: #FFF0D9;
+        padding: 1%;
+    }
+    .informacion {
+        background-color: #FFCCAA;
+        padding: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            max-width: 7%;
+        }
+
+        p {
+            width: 40%;
+            text-align: center;
+            padding: 1%;
+        }
+
+        button {
+            background-color: #F97316;
+            width: 20%;
+            border: transparent;
+            border-radius: 8px;
+            padding: 1%;
+
+            &:hover {
+                transform: scale(1.1);
+                transition: all .3s;
+            }
+        }
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .carta {
+        background: #FFF0D9;
+        padding: 3%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+
+        .plato {
+            padding: 3%;
+            border: black 2px solid;
+            background: #D9A441;
+            border-radius: 8px;
+
+
+            img {
+                border: black 2px solid;
+                border-radius: 10px;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all .3s;
+                }
+            }
+
+            h2 {
+                padding: 2%;
+            }
+
+            button {
+                background-color: #B91C1C;
+                width: 30%;
+                border: transparent;
+                border-radius: 8px;
+                font-weight: bold;
+                padding: 1%;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+
+    #trabajadores {
+        background: #FFCCAA;
+        padding: 60px 8%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .titulo-trabajadores {
+        text-align: center;
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .trabajador {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .trabajador img {
+        width: 250px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .info-trabajador {
+        flex: 1;
+    }
+
+    .info-trabajador h2 {
+        font-size: 28px;
+        margin: 0 0 20px;
+    }
+
+    .info-trabajador p {
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 550px;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .trabajador {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .trabajador img {
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .info-trabajador h2 {
+            font-size: 23px;
+        }
+    }
+}
+footer#footer {
+    background: #F97316;
+    padding: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+        padding: 8% 3%;
+        text-align: center;
+    }
+
+    a {
+        border: solid 1px white;
+        border-radius: 50%;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        color: #ffffff;
+        margin: 0 4px;
+        text-align: center;
+        line-height: 45px;
+
+        &:hover {
+            background-color: black;
+            transform: scale(1.1);
+        }
+    }
+
+    p {
+        color: black;
+    }
+}
