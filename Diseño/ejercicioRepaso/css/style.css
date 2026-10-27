@@ -116,7 +116,7 @@ main#main {
         justify-content: space-around;
         text-align: center;
 
-        @media (max-width: 600px) {
+        @media screen and (max-width: 600px) {
             flex-direction: column;
             text-align: center;
         }
@@ -127,7 +127,7 @@ main#main {
             background: #D9A441;
             border-radius: 8px;
         
-            @media (max-width: 600px) {
+            @media screen and (max-width: 600px) {
             margin: 2%;
         }
 

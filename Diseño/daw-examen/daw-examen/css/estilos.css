@@ -1,0 +1,97 @@
+/* =====================================================
+   ESTILOS BASE - Práctica DAW: Maquetación de sitio web
+   ===================================================== */
+
+/* ---------- 1. VARIABLES: COLORES CORPORATIVOS ---------- */
+:root {
+  --color-primario:      #224450;  /* Fondo del hero y de la cabecera */
+  --color-primario-oscuro: #114555; /* Títulos de sección */
+  --color-secundario:    #37545F;  /* Fondo de la sección destacada */
+  --color-acento:        #FFE600;  /* Amarillo corporativo: resaltados, subrayados, iconos */
+  --color-acento-claro:  #FFF278;  /* Amarillo claro: degradados de iconos */
+  --color-texto:         #114555;  /* Texto principal sobre fondo claro */
+  --color-texto-suave:   #A7B6BE;  /* Texto descriptivo sobre fondo oscuro */
+  --color-fondo-pie:     #0A1C22;  /* Pie de página */
+  --color-blanco:        #FFFFFF;
+}
+
+/* ---------- 2. VARIABLES: TIPOGRAFÍA ---------- */
+/* Las fuentes se cargan en el <head> del HTML (Google Fonts) */
+:root {
+  --fuente-titulos: 'Zilla Slab', serif;
+  --fuente-texto:   'Open Sans', sans-serif;
+}
+
+/* ---------- 3. RESET BÁSICO ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- 4. ESTILOS GENERALES ---------- */
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background-color: var(--color-blanco);
+  line-height: 1.6;
+}
+
+/* Aquí empieza el trabajo del alumno:
+   maquetación de cabecera, hero, servicios, destacado, portfolio y pie. */
+
+  header#header{
+    padding: 1%;
+    margin: 2%;
+    display: flex;
+    justify-content: space-between;
+
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: var(--color-primario);
+            text-transform: uppercase;
+            padding: 0 10px;
+            margin: 0 5px;
+            font-weight: bold;
+            
+            @media screen and (width < 768px) {
+                display: none;
+            }
+            
+            &:hover {
+                transform: scale(1.2);
+                transition: all .3s;
+            }
+        }
+        button{
+            display: none;
+            border: none;
+            font-size: 20px;
+            
+            @media screen and (width < 768px) {
+                display: block;
+            }
+        }
+    }
+}
