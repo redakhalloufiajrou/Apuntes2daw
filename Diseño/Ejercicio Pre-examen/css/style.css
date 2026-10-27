@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+
+header#header {
+    display: flex;
+    box-shadow: 0 10px 10px rgb(0,0,0,.3);
+    padding-bottom: 40px;
+    padding: 10px;
+
+    div>a{
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .menu {
+        margin-right: 10px;
+        gap: 10rem;
+        margin-left: auto;
+
+        a {
+            color: black;
+            order: 1;
+            text-decoration: none;
+            
+            
+            @media screen and (width < 760px) {
+                display: none;
+            }
+        }
+
+        button {
+            margin-left: auto;
+            text-decoration: transparent;
+            display: none;
+            border: none;
+            font-size: 20px;
+
+            @media screen and (width < 760px) {
+                display: block;
+
+            }
+        }
+    }
+}
