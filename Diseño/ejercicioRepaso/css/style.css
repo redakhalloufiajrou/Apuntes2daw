@@ -19,15 +19,7 @@ header#header {
     justify-content: space-between;
     box-shadow: rgba(235, 104, 28, 0.753);
 
-    @media screen and (max-width: 768px) {
-        max-width: 50%;
-    }
 
-    @media screen and (max-width: 768px) {
-        max-width: 100%;
-        flex-direction: column;
-        gap: 15px;
-    }
 
     .logo>a>img {
         max-width: 7%;
@@ -39,21 +31,29 @@ header#header {
         justify-content: center;
         align-items: center;
 
-        @media screen and (max-width: 768px) {
-            flex-direction: column;
-            width: 100%;
-            gap: 10px;
-        }
-
         a {
             color: black;
             text-transform: uppercase;
             padding: 0 10px;
             margin: 0 5px;
-
+            
+            @media screen and (width < 768px) {
+                display: none;
+            }
+            
             &:hover {
                 transform: scale(1.2);
                 transition: all .5s;
+            }
+        }
+        button{
+            background-color: #F97316;
+            display: none;
+            border: none;
+            font-size: 20px;
+            
+            @media screen and (width < 768px) {
+                display: block;
             }
         }
     }
@@ -72,6 +72,8 @@ main#main {
         justify-content: center;
         flex-direction: column;
 
+    
+
         img {
             max-width: 7%;
         }
@@ -80,6 +82,10 @@ main#main {
             width: 40%;
             text-align: center;
             padding: 1%;
+            @media  screen and (max-width: 600px) {
+            width: 90%;
+            }
+
         }
 
         button {
@@ -88,6 +94,9 @@ main#main {
             border: transparent;
             border-radius: 8px;
             padding: 1%;
+            @media  screen and (max-width: 600px) {
+            width: 70%;
+            }
 
             &:hover {
                 transform: scale(1.1);
@@ -107,11 +116,20 @@ main#main {
         justify-content: space-around;
         text-align: center;
 
+        @media (max-width: 600px) {
+            flex-direction: column;
+            text-align: center;
+        }
+
         .plato {
             padding: 3%;
             border: black 2px solid;
             background: #D9A441;
             border-radius: 8px;
+        
+            @media (max-width: 600px) {
+            margin: 2%;
+        }
 
 
             img {
