@@ -17,15 +17,16 @@
 
 body {
     font-size: 18px;
-    font-family: "Barlow", serif;
-    font-weight: 600;
+    font-family: "barlow", serif;
+    font-weight: 700;
 }
 
 
 header#header {
 
-    min-height: 80vh;
+    min-height: 80svh;
     background: var(--azul) url(../images/desktop/image-header.jpg) no-repeat center 100%;
+    background-size: cover;
 
     nav {
         background-color: transparent;
@@ -33,30 +34,31 @@ header#header {
         a {
             color: var(--blanco);
             text-transform: initial;
-            margin: 15px;
         }
 
         .nav-link.active {
             font-family: "Fraunces", serif;
             background-color: var(--blanco);
             color: var(--negro);
-            padding: 3px;
-            width: 19%;
+            margin: 1%;
+            font-size: 70%;
             text-transform: uppercase;
-            border-radius: 30%;
+            border-radius: 30px;
         }
     }
 
     .container2 {
+
         text-align: center;
         min-height: 80vh;
         align-content: start;
 
         h1 {
-            font-size: 6rem;
-            font-weight: 100;
+            font-family: "Fraunces", serif;
+            font-weight: 700;
+            font-size: 5rem;
             text-transform: uppercase;
-            font-weight: bold;
+            padding: 2%;
         }
     }
 }
@@ -65,10 +67,248 @@ main#main {
     background-color: var(--blanco);
     color: var(--negro);
 
-    div>div>img{
+    #section1 .row {
+        align-items: stretch;
+    }
+
+    #parte1 {
         display: flex;
-        justify-content: flex-end; 
         align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 60px 8%;
+        background-color: #fffcf8;
+    }
+
+    #parte1 .contenido {
+        max-width: 350px;
+    }
+
+    #parte1 h3 {
+        font-family: "Fraunces", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #24303e;
+        margin-bottom: 25px;
+    }
+
+    #parte1 p {
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #818498;
+        margin-bottom: 25px;
+    }
+
+    #parte1 a {
+        font-family: "Fraunces", serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #24303e;
+        position: relative;
+        z-index: 1;
+    }
+
+    #parte1 a::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        bottom: -2px;
+        height: 8px;
+        background-color: #fad400;
+        opacity: 0.4;
+        border-radius: 5px;
+        z-index: -1;
+    }
+
+    #section1 .imagen {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /*  */
+    #section2 .row {
+        align-items: stretch;
+    }
+
+    #parte2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 60px 8%;
+        background-color: #fffcf8;
+    }
+
+    #parte2 .contenido {
+        max-width: 350px;
+    }
+
+    #parte2 h3 {
+        font-family: "Fraunces", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #24303e;
+        margin-bottom: 25px;
+    }
+
+    #parte2 p {
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.7;
+        color: #818498;
+        margin-bottom: 25px;
+    }
+
+    #parte2 a {
+        font-family: "Fraunces", serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #24303e;
+        position: relative;
+        z-index: 1;
+    }
+
+    #parte2 a::after {
+        content: "";
+        position: absolute;
+        left: -5px;
+        right: -5px;
+        bottom: -2px;
+        height: 8px;
+        background-color: #ff7463;
+        opacity: 0.4;
+        border-radius: 5px;
+        z-index: -1;
+    }
+
+    #section2 .imagen {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /*  */
+
+    #section3 .row {
+        display: flex;
+        align-items: stretch;
+    }
+
+    #parte3,
+    #parte4 {
+        min-height: 80svh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        padding: 40px 8%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+    }
+
+    #parte3 {
+        background-image: url("../images/desktop/image-graphic-design.jpg");
+    }
+
+    #parte4 {
+        background-image: url("../images/desktop/image-photography.jpg");
+    }
+
+    #section3 .contenido {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #section3 h4 {
+        font-family: "Fraunces", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    #section3 p {
+        font-family: "Barlow", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    #parte3 h4,
+    #parte3 p {
+        color: #25564b;
+    }
+
+    #parte4 h4,
+    #parte4 p {
+        color: #19536b;
+    }
+
+    section#section4 {
+        padding: 5%;
+        text-align: center;
+        margin-top: 5%;
+
+        div#parte5 {
+            font-family: "Fraunces", serif;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: #a7a8aa;
+        }
+    }
+
+    section#section5 {
+        display: grid;
+        justify-content: center;
+        align-items: start;
+
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 60px;
+
+        text-align: center;
+
+        div#parte6 {
+            align-items: center;
+            text-align: center;
+
+            img {
+                border-radius: 50%;
+                margin-bottom: 10%;
+                height: 25%;
+            }
+
+            p {
+                font-family: "Barlow", serif;
+                font-weight: 500;
+                margin-bottom: 10%;
+                color: black;
+            }
+
+            h5{
+                font-weight: bold;
+                color: black;
+            }
+
+            span{
+                font-size: 12px;
+                color: #a7a8aa;
+            }
+
+        }
     }
 
 }
