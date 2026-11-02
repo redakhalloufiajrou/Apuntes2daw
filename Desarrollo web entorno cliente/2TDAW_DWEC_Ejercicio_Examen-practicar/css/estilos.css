@@ -15,13 +15,20 @@
    1. VARIABLES DE COLOR (completa los valores)
    --------------------------------------------------------------------- */
 :root {
-  --color-principal: #1F6F5C ;     /* TODO: #1F6F5C  (botones, etiqueta del hero) */
-  --color-acento: #F4A261 ;        /* TODO: #F4A261  (títulos del pie, iconos de contacto) */
-  --color-oscuro: #14213D ;        /* TODO: #14213D  (títulos) */
-  --color-fondo-suave: #F7F5F0 ;   /* TODO: #F7F5F0  (secciones alternas, fondo de iconos) */
-  --color-texto: #2B2D42 ;         /* TODO: #2B2D42  (texto general) */
-  --color-texto-suave: #5C6378 ;   /* TODO: #5C6378  (texto secundario) */
-  --color-blanco: #FFFFFF ;        /* TODO: #FFFFFF */
+   --color-principal: #1F6F5C;
+   /* TODO: #1F6F5C  (botones, etiqueta del hero) */
+   --color-acento: #F4A261;
+   /* TODO: #F4A261  (títulos del pie, iconos de contacto) */
+   --color-oscuro: #14213D;
+   /* TODO: #14213D  (títulos) */
+   --color-fondo-suave: #F7F5F0;
+   /* TODO: #F7F5F0  (secciones alternas, fondo de iconos) */
+   --color-texto: #2B2D42;
+   /* TODO: #2B2D42  (texto general) */
+   --color-texto-suave: #5C6378;
+   /* TODO: #5C6378  (texto secundario) */
+   --color-blanco: #FFFFFF;
+   /* TODO: #FFFFFF */
 }
 
 /* ---------------------------------------------------------------------
@@ -30,32 +37,31 @@
    del index.html desde Google Fonts.
    --------------------------------------------------------------------- */
 :root {
-  --fuente-titulos: 'Poppins', sans-serif;
-  --fuente-texto: 'Inter', sans-serif;
+   --fuente-titulos: 'Poppins', sans-serif;
+   --fuente-texto: 'Inter', sans-serif;
 }
 
 body {
-  font-family: var(--fuente-texto);
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: var(--color-blanco);
-  color: var(--color-texto);
+   font-family: var(--fuente-texto);
+   font-size: 1rem;
+   line-height: 1.6;
+   background-color: var(--color-blanco);
+   color: var(--color-texto);
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--fuente-titulos);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--color-oscuro);
+h1,
+h2,
+h3,
+h4 {
+   font-family: var(--fuente-titulos);
+   font-weight: 600;
+   line-height: 1.2;
+   color: var(--color-oscuro);
 }
 
-h1 { font-weight: 700; }
-
-/* ---------------------------------------------------------------------
-   3. GENERAL
-   TODO: color del body (--color-texto) y fondo blanco; títulos (h1-h4)
-   con --color-oscuro; imágenes responsive; listas sin viñetas ni padding.
-   --------------------------------------------------------------------- */
+h1 {
+   font-weight: 700;
+}
 
 /* ---------------------------------------------------------------------
    4. CABECERA (navbar)
@@ -68,12 +74,25 @@ h1 { font-weight: 700; }
    Pista: Bootstrap pone "block-size: 0" en .collapse cerrado; en
    escritorio hay que anularlo.
    --------------------------------------------------------------------- */
+header#header {
+   padding: 1%;
+   box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+
+   div>a {
+      color: var(--color-oscuro);
+      font-weight: bold;
+
+      &:hover {
+         color: var(--color-principal);
+      }
+   }
+}
 
 /* ---------------------------------------------------------------------
    5. BOTONES Y ETIQUETAS
    TODO: botón redondeado (border-radius: 999px) con tres variantes:
-     - principal: fondo --color-principal y texto blanco
-     - contorno: fondo transparente y borde del color principal
+   - principal: fondo --color-principal y texto blanco
+   - contorno: fondo transparente y borde del color principal
    Efecto hover: el botón sube 2 px (transform).
    Etiqueta del hero: mayúsculas, color principal, letter-spacing.
    --------------------------------------------------------------------- */
@@ -84,7 +103,311 @@ h1 { font-weight: 700; }
    texto destacado más grande y en color suave; imagen con bordes
    redondeados (1.25rem) y sombra; botones separados con gap.
    --------------------------------------------------------------------- */
+section#inicio {
+   padding: 4%;
 
+   #contenedor1 {
+      padding: 2%;
+
+      .principal {
+         color: var(--color-principal);
+      }
+
+      h1 {
+         font-size: 4rem;
+      }
+
+      .secundario {
+         padding-bottom: 4%;
+         color: var(--color-texto-suave);
+      }
+
+      .botones {
+         .btn1 {
+            text-decoration: none;
+            padding: 2%;
+            border: 1px solid var(--color-principal);
+            border-radius: 30px;
+            background-color: var(--color-principal);
+            color: var(--color-blanco);
+            margin-right: 2%;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+
+         }
+
+         .btn2 {
+            text-decoration: none;
+            padding: 2%;
+            border: 1px solid var(--color-principal);
+            border-radius: 30px;
+            background-color: var(--color-blanco);
+            color: var(--color-principal);
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+   }
+
+   #contenedor2 {
+      padding: 2%;
+
+      img {
+         width: 100%;
+         border-radius: 30px;
+         box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+      }
+   }
+}
+
+section#ventajas {
+   background-color: var(--color-fondo-suave);
+   padding: 7%;
+
+   h2 {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 4%;
+   }
+
+   .cajas {
+      padding: 4%;
+      border: 1px solid var(--color-blanco);
+      background-color: var(--color-blanco);
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+
+      img {
+         width: 15%;
+         padding: 3%;
+         border: 1px solid var(--color-fondo-suave);
+         background-color: var(--color-fondo-suave);
+         border-radius: 50px;
+         margin-bottom: 4%;
+      }
+
+      h3 {
+         font-size: 20px;
+      }
+
+      p {
+         color: var(--color-texto-suave);
+      }
+   }
+
+}
+
+section#espacios {
+   padding: 7%;
+
+   h2 {
+      font-weight: bold;
+      text-align: center;
+   }
+
+   p {
+      text-align: center;
+      margin-bottom: 4%;
+      color: var(--color-texto-suave);
+   }
+
+   .parte-arriba {
+      margin-bottom: 2%;
+   }
+
+   .cajas-espacios {
+      border: 1px solid var(--color-blanco);
+      box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+      border-radius: 30px;
+
+      img {
+         border-radius: 30px 30px;
+         width: 100%;
+         height: 200px;
+         object-fit: cover;
+         justify-content: center;
+         display: block;
+      }
+
+      .info {
+         padding: 3%;
+
+         h3 {
+            font-size: 20px;
+         }
+
+         p {
+            text-align: start;
+            color: var(--color-texto-suave);
+         }
+      }
+   }
+}
+
+section#planes {
+   padding: 4%;
+   background-color: var(--color-fondo-suave);
+
+   h2 {
+      font-weight: bold;
+      text-align: center;
+      padding: 2%;
+   }
+
+   .cajas-planes {
+      border: 1px solid var(--color-blanco);
+      background: var(--color-blanco);
+      padding: 4%;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+      text-align: center;
+
+      h3 {
+         font-weight: bold;
+         font-size: 15px;
+      }
+
+      .formato {
+         color: var(--color-oscuro);
+         font-weight: bold;
+         font-size: 25px;
+      }
+
+      .formato span {
+         font-size: 1rem;
+         font-weight: 400;
+         color: var(--color-texto-suave);
+      }
+
+      p {
+         color: var(--color-texto-suave);
+      }
+
+      .btn1 {
+         width: 90%;
+         text-decoration: none;
+         padding: 2%;
+         border: 1px solid var(--color-principal);
+         border-radius: 30px;
+         background-color: var(--color-principal);
+         color: var(--color-blanco);
+         margin-right: 2%;
+         display: inline-block;
+         transition: transform 0.3s ease-in-out;
+         margin-top: 2%;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+
+      }
+
+      .btn2 {
+         width: 90%;
+         text-decoration: none;
+         padding: 2%;
+         border: 1px solid var(--color-principal);
+         border-radius: 30px;
+         background-color: var(--color-blanco);
+         color: var(--color-principal);
+         display: inline-block;
+         transition: transform 0.3s ease-in-out;
+         margin-top: 2%;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+      }
+   }
+}
+
+section#testimonios{
+   padding: 4%;
+   h2{
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 3%;
+   }
+   .caja{
+      padding: 2%;
+      border: 1px solid var(--color-blanco);
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+      margin-bottom: 3%;
+      .reseña{
+         font-style: italic;
+      }
+      .informacion{
+         display: flex;
+         img{
+            width: 50px;
+            border-radius: 30px;
+            margin-right: 2%;
+         }
+         .negrita span{
+            color: var(--color-texto-suave);
+         }
+      }
+   }
+}
+
+footer#contacto{
+   padding: 4%;
+   background-color: var(--color-oscuro);
+   text-align: start;
+   h4{
+      color: var(--color-acento);
+   }
+   .logo-fondo{
+      padding: 2%;
+      background: var(--color-blanco);
+      border-radius: 20px;
+      margin-bottom: 4%;
+   }
+   .contacto{
+      list-style: none;
+      li>img{
+         text-decoration: none; margin-right: 4%;
+      }
+      color: var(--color-texto-suave);
+   }
+   .espacio{
+      list-style: none;
+      li>a{
+         text-decoration: none;
+         color: var(--color-texto-suave);
+      }
+   }
+   .empresa{
+      list-style: none;
+      li>a{
+         text-decoration: none;
+         color: var(--color-texto-suave);
+      }
+   }
+   .redes{
+      list-style: none;
+      li>a{
+         text-decoration: none;
+         color: var(--color-texto-suave);
+      }
+   }
+   .container{
+      p{
+         text-align: center;
+         color: var(--color-blanco);
+         margin-top: 4%;
+      }
+   }
+}
 /* ---------------------------------------------------------------------
    7. SECCIONES
    TODO: padding vertical; fondo alterno con --color-fondo-suave;
