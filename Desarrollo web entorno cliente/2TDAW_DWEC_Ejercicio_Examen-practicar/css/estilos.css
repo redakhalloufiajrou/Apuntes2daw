@@ -74,19 +74,49 @@ h1 {
    Pista: Bootstrap pone "block-size: 0" en .collapse cerrado; en
    escritorio hay que anularlo.
    --------------------------------------------------------------------- */
-header#header {
-   padding: 1%;
-   box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+#header {
+   position: sticky;
+   top: 0;
+   z-index: 9999;
+   box-shadow: 0 2px 10px var(--color-sombra);
+   background: var(--color-blanco);
 
-   div>a {
-      color: var(--color-oscuro);
-      font-weight: bold;
+   nav {
+      background: var(--color-blanco);
 
-      &:hover {
-         color: var(--color-principal);
+      .navbar-brand>img {
+         height: 40px;
+      }
+
+      button {
+         box-shadow: none;
+         border: none;
+
+         span {
+            filter: brightness(0);
+         }
       }
    }
+
+   #menu {
+      a {
+         font-weight: bold;
+         color: var(--color-oscuro);
+
+         &:hover {
+            color: var(--color-principal);
+         }
+      }
+
+      @media screen and (width>=768px) {
+         block-size: auto;
+         display: block;
+         overflow: visible;
+      }
+   }
+
 }
+
 
 /* ---------------------------------------------------------------------
    5. BOTONES Y ETIQUETAS
@@ -219,14 +249,15 @@ section#espacios {
       color: var(--color-texto-suave);
    }
 
-   .parte-arriba {
-      margin-bottom: 2%;
-   }
-
    .cajas-espacios {
       border: 1px solid var(--color-blanco);
       box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
       border-radius: 30px;
+      transition: transform 0.5s ease-in-out;
+
+            &:hover {
+               transform: scale(1.05);
+            }
 
       img {
          border-radius: 30px 30px;
@@ -329,85 +360,105 @@ section#planes {
    }
 }
 
-section#testimonios{
+section#testimonios {
    padding: 4%;
-   h2{
+
+   h2 {
       text-align: center;
       font-weight: bold;
       margin-bottom: 3%;
    }
-   .caja{
+
+   .caja {
       padding: 2%;
       border: 1px solid var(--color-blanco);
       border-radius: 30px;
       box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
       margin-bottom: 3%;
-      .reseña{
+
+      .reseña {
          font-style: italic;
       }
-      .informacion{
+
+      .informacion {
          display: flex;
-         img{
+
+         img {
             width: 50px;
             border-radius: 30px;
             margin-right: 2%;
          }
-         .negrita span{
+
+         .negrita span {
             color: var(--color-texto-suave);
          }
       }
    }
 }
 
-footer#contacto{
+footer#contacto {
    padding: 4%;
    background-color: var(--color-oscuro);
    text-align: start;
-   h4{
+
+   h4 {
       color: var(--color-acento);
    }
-   .logo-fondo{
+
+   .logo-fondo {
       padding: 2%;
       background: var(--color-blanco);
       border-radius: 20px;
       margin-bottom: 4%;
    }
-   .contacto{
+
+   .contacto {
       list-style: none;
-      li>img{
-         text-decoration: none; margin-right: 4%;
+
+      li>img {
+         text-decoration: none;
+         margin-right: 4%;
       }
+
       color: var(--color-texto-suave);
    }
-   .espacio{
+
+   .espacio {
       list-style: none;
-      li>a{
+
+      li>a {
          text-decoration: none;
          color: var(--color-texto-suave);
       }
    }
-   .empresa{
+
+   .empresa {
       list-style: none;
-      li>a{
+
+      li>a {
          text-decoration: none;
          color: var(--color-texto-suave);
       }
    }
-   .redes{
+
+   .redes {
       list-style: none;
-      li>a{
+
+      li>a {
          text-decoration: none;
          color: var(--color-texto-suave);
       }
    }
-   .container{
-      p{
+
+   .container {
+      p {
          text-align: center;
          color: var(--color-blanco);
          margin-top: 4%;
       }
    }
 }
+
 /* ---------------------------------------------------------------------
    7. SECCIONES
    TODO: padding vertical; fondo alterno con --color-fondo-suave;
