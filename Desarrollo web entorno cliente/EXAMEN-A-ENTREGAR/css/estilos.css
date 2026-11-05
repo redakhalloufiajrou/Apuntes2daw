@@ -1,0 +1,546 @@
+/* =====================================================================
+   EXAMEN (3 horas) · Landing "Vivero Brote"
+   Archivo para completar: css/estilos.css
+   ---------------------------------------------------------------------
+   REGLA: Bootstrap 6 SOLO para:
+     - Rejilla: container, row, g-*, col-*, y sus prefijos sm: md: lg: xl: 2xl:
+     - Navbar: navbar, navbar-expand (md:navbar-expand), navbar-brand,
+               navbar-toggler, navbar-toggler-icon, navbar-nav, nav-item,
+               nav-link, collapse
+   Todo lo demás (colores, botones, tarjetas, iconos, textos, espaciados,
+   imágenes, pie) se escribe aquí con CSS puro y tus propias clases.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. VARIABLES DE COLOR Y TIPOGRAFÍA (ya definidas; úsalas con var())
+   Las fuentes Fraunces (títulos) y Work Sans (texto) se cargan en el
+   <head> del index.html desde Google Fonts.
+   --------------------------------------------------------------------- */
+:root {
+   --color-principal: #2F6B4F;
+   /* botones, etiquetas, precios */
+   --color-acento: #E9A23B;
+   /* sellos, horas, detalles destacados */
+   --color-oscuro: #14241C;
+   /* títulos y fecha de los talleres */
+   --color-fondo-suave: #EEF3EC;
+   /* bandas y tarjetas claras */
+   --color-texto: #1D2A23;
+   /* texto general */
+   --color-texto-suave: #5E6E64;
+   /* texto secundario */
+   --color-blanco: #FFFFFF;
+   --color-pie: #0F1A14;
+   /* fondo del pie */
+   --color-borde: #D5DFD5;
+   /* líneas finas */
+
+   --radio: 18px;
+   --sombra: 0 12px 32px rgba(20, 36, 28, .09);
+
+   --fuente-titulos: 'Fraunces', serif;
+   --fuente-texto: 'Work Sans', sans-serif;
+}
+
+/* ---------------------------------------------------------------------
+   2. TIPOGRAFÍA (ya configurada; no hay que modificarla)
+   --------------------------------------------------------------------- */
+body {
+   font-family: var(--fuente-texto);
+   font-size: 1rem;
+   line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+   font-family: var(--fuente-titulos);
+   font-weight: 600;
+   line-height: 1.05;
+}
+
+header#header {
+   position: sticky;
+   top: 0;
+   z-index: 9999;
+   background: var(--color-blanco);
+   box-shadow: var(--sombra);
+
+   .navbar-toggler {
+      background-color: var(--color-oscuro);
+   }
+
+   .navbar-brand {
+      width: 100px;
+   }
+
+   .btn-close {
+      background: var(--color-oscuro);
+      color: var(--color-blanco);
+   }
+
+   nav.navbar {
+      background-color: transparent;
+   }
+
+   nav a {
+      color: var(--color-texto);
+      font-weight: bold;
+
+      &:hover {
+         color: var(--color-principal);
+      }
+   }
+}
+
+main#main {
+   background: var(--color-blanco);
+   color: black;
+
+   section#inicio {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: url(../img/hero.svg) center / cover no-repeat;
+      min-height: 80vh;
+      text-align: center;
+      justify-content: center;
+
+      .principal {
+         color: var(--color-principal);
+         text-transform: uppercase;
+         font-weight: bold;
+      }
+
+      h1 {
+         font-size: 6rem;
+      }
+
+      .secundario {
+         color: var(--color-texto-suave);
+      }
+
+      .botones {
+         .btn1 {
+            text-decoration: none;
+            padding: 1%;
+            border: 1px solid var(--color-principal);
+            border-radius: 50px;
+            background-color: var(--color-principal);
+            color: var(--color-blanco);
+            font-weight: bold;
+            margin-right: 2%;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+
+         }
+
+         .btn2 {
+            text-decoration: none;
+            padding: 1%;
+            border: 1px solid var(--color-principal);
+            border-radius: 50px;
+            background-color: var(--color-fondo-suave);
+            color: var(--color-principal);
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+               transform: scale(1.1);
+            }
+         }
+      }
+   }
+
+   section#reglas {
+      padding: 7%;
+
+      h2 {
+         text-align: center;
+      }
+
+      p {
+         text-align: center;
+         margin-bottom: 4%;
+      }
+
+      .cajas {
+         padding: 4%;
+         border: 1px solid var(--color-fondo-suave);
+         background-color: var(--color-fondo-suave);
+         border-radius: 30px;
+         box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+
+         img {
+            width: 15%;
+            padding: 3%;
+            border: 1px solid var(--color-blanco);
+            background-color: var(--color-blanco);
+            border-radius: 50px;
+            margin-bottom: 4%;
+         }
+
+         h3 {
+            font-size: 20px;
+         }
+
+         p {
+            font-size: 15px;
+            color: var(--color-texto-suave);
+            font-weight: bold;
+            text-align: start;
+         }
+      }
+   }
+
+   section#temporada {
+      padding: 7%;
+      background-color: var(--color-fondo-suave);
+
+      h2 {
+         text-align: center;
+      }
+
+      p {
+         text-align: center;
+         margin-bottom: 4%;
+      }
+
+      .cajas-temporada {
+         border: 1px solid var(--color-blanco);
+         background-color: var(--color-blanco);
+         box-shadow: 0 4px 12px rgba(100, 100, 100, 0.12);
+         border-radius: 30px;
+
+         img {
+            border-radius: 30px 30px;
+            width: 100%;
+            object-fit: cover;
+            justify-content: center;
+            display: block;
+         }
+
+         .info {
+            padding: 3%;
+
+            .normal {
+               color: var(--color-texto-suave);
+               text-transform: uppercase;
+               font-size: 13px;
+            }
+
+            h3 {
+               font-size: 20px;
+            }
+
+            p {
+               text-align: start;
+               color: var(--color-principal);
+               font-weight: bold;
+            }
+         }
+      }
+   }
+
+   section#talleres {
+      padding: 7%;
+      background-color: var(--color-blanco);
+      color: var(--color-oscuro);
+
+      #talleres .container {
+         max-width: 900px;
+         margin: 0 auto;
+      }
+
+      h2 {
+         text-align: center;
+      }
+
+      p {
+         text-align: center;
+         margin-bottom: 4%;
+      }
+
+      #talleres .intro {
+         font-size: 14px;
+         font-weight: bold;
+         text-align: center;
+         color: var(--color-texto-suave);
+         margin-bottom: 40px;
+      }
+
+      .talleres-lista {
+         max-width: 700px;
+         margin: 0 auto;
+         border-top: 1px solid var(--color-fondo-suave);
+      }
+
+      .taller {
+         display: flex;
+         align-items: center;
+         gap: 25px;
+         padding: 16px 0;
+         border-bottom: 1px solid #e2e8e3;
+      }
+
+      .fecha {
+         width: 65px;
+         min-width: 65px;
+         height: 65px;
+         background-color: var(--color-oscuro);
+         border-radius: 12px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+
+      .fecha p {
+         margin: 0;
+      }
+
+      .numero {
+         color: var(--color-acento);
+         font-family: var(--fuente-titulos);
+         font-size: 28px;
+         font-weight: bold;
+      }
+
+      .mes {
+         color: white;
+         font-size: 10px;
+         font-weight: bold;
+         text-transform: uppercase;
+         margin-top: 2px;
+      }
+
+      .cajas-taller {
+         flex: 1;
+      }
+
+      .cajas-taller h3 {
+         font-family: var(--fuente-titulos);
+         font-size: 20px;
+         margin: 0 0 6px;
+         color: var(--color-oscuro);
+      }
+
+      .cajas-taller p {
+         text-align: start;
+         font-size: 13px;
+         font-weight: bold;
+         color: var(--color-texto-suave);
+         margin: 0;
+         line-height: 1.5;
+      }
+
+      .plazas {
+         background-color: var(--color-fondo-suave);
+         color: var(--color-principal);
+         padding: 6px 12px;
+         border-radius: 20px;
+         font-size: 11px;
+         font-weight: bold;
+         white-space: nowrap;
+      }
+   }
+}
+
+footer#contacto {
+   display: block;
+   width: 100%;
+   padding: 5%;
+   background-color: var(--color-pie);
+   text-align: start;
+   box-sizing: border-box;
+
+   .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .row {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 4%;
+         align-items: start;
+      }
+
+      h4 {
+         color: var(--color-acento);
+         font-family: var(--fuente-titulos);
+         font-size: 1.1rem;
+         margin: 0 0 3%;
+      }
+
+      .logo-fondo {
+         display: block;
+         width: 75%;
+         padding: 1%;
+         background: var(--color-blanco);
+         border-radius: 8px;
+         margin-bottom: 5%;
+         box-sizing: border-box;
+      }
+
+      .contacto,
+      .horario {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .contacto li {
+         display: flex;
+         align-items: start;
+         margin-bottom: 2%;
+         color: var(--color-texto-suave);
+         font-family: var(--fuente-texto);
+         font-size: 0.85rem;
+      }
+
+      .contacto li img {
+         width: 14px;
+         height: 14px;
+         object-fit: contain;
+         margin-right: 8px;
+      }
+
+      .horario li {
+         margin-bottom: 3%;
+
+         p {
+            margin: 0 0 3px;
+            color: var(--color-texto-suave);
+            font-family: var(--fuente-texto);
+            font-size: 0.85rem;
+         }
+      }
+
+      .horario li p:first-child {
+         font-weight: bold;
+         color: var(--color-blanco);
+      }
+
+      >p {
+         border-top: 1px solid rgba(255, 255, 255, 0.08);
+         padding-top: 2%;
+         margin: 4% 0 0;
+         text-align: center;
+         color: var(--color-texto-suave);
+         font-family: var(--fuente-texto);
+         font-size: 0.8rem;
+      }
+   }
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------
+   3. GENERAL
+   TODO: color de texto y fondo blanco en el body; títulos (h1-h4) en
+   color --color-oscuro, sin margen y con letter-spacing -.01em; imágenes
+   responsive y en bloque; enlaces heredando color sin subrayado; listas
+   sin viñetas ni padding; párrafos sin margen.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   4. CABECERA (navbar)
+   TODO: cabecera BLANCA con línea inferior (--color-borde), sticky arriba
+   y z-index alto. Logotipo de 44 px de alto. Enlaces en peso 500, color
+   oscuro y fondo suave al pasar el ratón.
+   Móvil: logotipo a la izquierda y hamburguesa redonda a la derecha
+   (fondo suave); el menú (#menu) se abre como un panel con
+   --color-fondo-suave y bordes redondeados (12px).
+   Escritorio (≥ 768 px, md): menú en una línea con gap de 2.25rem, sin
+   fondo y sin hamburguesa.
+   Pista: Bootstrap pone "block-size: 0" en .collapse cerrado; en
+   escritorio hay que anularlo.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   5. BOTONES Y ETIQUETAS
+   TODO: botón en forma de píldora (border-radius 999px), peso 600, con
+   dos variantes:
+     - principal: fondo --color-principal y texto blanco
+     - contorno: fondo transparente y borde de 2px en --color-principal
+   Efecto hover: el botón sube 2 px (transform).
+   Etiqueta: mayúsculas, color principal, negrita y letter-spacing .2em.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   6. HERO
+   TODO: sección de altura mínima 760px con la imagen img/hero.svg como
+   FONDO (background, center / cover) y el texto por encima, CENTRADO.
+   Sobre la imagen, un velo de --color-fondo-suave con 35% de opacidad.
+   Padding vertical de 6rem. Título gigante con
+   clamp(3rem, 8vw, 6.25rem), line-height 1 y máximo 14 caracteres por
+   línea. Texto de máximo 34rem en color suave y 1.15rem. Botones
+   centrados con gap de 1rem.
+   Móvil: altura mínima de 680px, velo más opaco (60%); botones a todo
+   el ancho.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   7. SECCIONES
+   TODO: padding vertical de 5rem; variante seccion-clara con fondo
+   --color-fondo-suave; título de sección centrado con
+   clamp(2.2rem, 4.5vw, 3.2rem); descripción centrada en color suave,
+   máximo 36rem y margen inferior de 3rem.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   8. CUIDADOS (tarjetas con icono)
+   TODO: tarjeta de fondo --color-fondo-suave, radio 18px y padding de
+   2rem, de la misma altura que su celda. Icono de 64px en un círculo
+   blanco (la imagen mide 36px). Título de 1.75rem y texto en color suave.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   9. CATÁLOGO DE PLANTAS (tarjetas de producto)
+   TODO: cada tarjeta ocupa 6 de las 12 columnas (col-12 md:col-6): dos
+   por fila desde md (768px) y una por fila en móvil.
+   Tarjeta blanca con borde fino (--color-borde), radio 18px y overflow
+   oculto, de la misma altura que su celda. Imagen con proporción 4:5 y
+   object-fit cover. Hover: la tarjeta sube 6px y aparece --sombra.
+   Sello "Nueva": píldora --color-acento arriba a la izquierda.
+   Categoría en mayúsculas pequeñas; precio en negrita y color principal.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   10. TALLERES (agenda)
+   TODO: agenda de máximo 52rem centrada. Cada taller es una fila con
+   separadores finos (--color-borde) y padding vertical de 1.5rem.
+   Bloque de fecha: caja --color-oscuro de 96px con el día en Fraunces
+   de 2.5rem en --color-acento y el mes en mayúsculas pequeñas.
+   Título del taller de 1.6rem; descripción en color suave.
+   Plazas: píldora de fondo suave alineada a la derecha.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   11. PIE
+   TODO: fondo --color-pie y texto #A9B8AE; padding superior de 4rem.
+   Dos bloques: logotipo y contacto a la izquierda; horario a la derecha.
+   Logotipo dentro de una caja blanca redondeada (14px), 180px de ancho.
+   Contacto con iconos de 18px alineados; los iconos deben verse en
+   blanco (filter: brightness(0) invert(1)).
+   Título "Horario" de 1.4rem en --color-acento; el día en blanco y en
+   negrita. Línea de copyright centrada, separada por un borde fino.
+   --------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------
+   12. RESPONSIVE (ajustes propios)
+   Corte del diseño: md (768px). Por debajo, diseño móvil; desde md, escritorio.
+   Breakpoints de Bootstrap 6: sm ≥ 576px · md ≥ 768px · lg ≥ 1024px
+   · xl ≥ 1280px · 2xl ≥ 1536px.
+   TODO en escritorio (≥ 768 px): ocultar la hamburguesa, menú en una
+   línea sin fondo y anular el block-size del collapse.
+   TODO en móvil (< 768 px): hero con menos padding y título de 3.4rem;
+   botones del hero a todo el ancho; títulos de sección de 2.2rem; cada
+   taller en columna con el bloque de fecha arriba.
+   --------------------------------------------------------------------- */
