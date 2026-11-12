@@ -1,24 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     margin: 20px;
 }
-img{
+
+img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-header#header{
+header#header {
     padding: 2%;
     display: flex;
     justify-content: space-between;
 
-    .menu{
-        a{
+    .menu {
+        a {
             text-decoration: none;
             padding: 0 10px;
             margin: 0 5px;
@@ -27,56 +29,75 @@ header#header{
     }
 }
 
-section#banner{
+section#banner {
     padding: 2%;
     display: flex;
     align-items: end;
-    
-    h1{
+
+    h1 {
         font-size: 3rem;
     }
 }
-main#home{
-    #filtros{
-    padding: 2%;
-    margin-top: 1px;
-    display: flex;
-    justify-content: space-between;
+
+main#home {
+    #filtros {
+        padding: 2%;
+        margin-top: 1px;
+        display: flex;
+        justify-content: space-between;
     }
 
-    #productos{
+    #productos {
         margin: 3%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(6, 1fr);
         gap: 40px;
-        .grande{
+
+        .grande {
             grid-column: 3/5;
             grid-row: 2/4;
 
         }
-        .grande1{
+
+        .grande1 {
             grid-column: 1/3;
             grid-row: 5/7;
         }
+
+        #figuraFondo {
+            background-image: url(../assets/img.png);
+            color: white;
+            padding: 4%;
+            min-height: 300px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+
+        }
+        
     }
 
 }
 
-section#nav{
-    nav{
+section#nav {
+    nav {
         display: flex;
         justify-content: center;
-        a{
+
+        a {
             padding: 0 10px;
             margin: 0 5px;
             text-decoration: none;
             color: black;
             font-size: 20px;
         }
-        .circulo{
-                border: 1px solid black;
-                border-radius: 30px;
-            }
+
+        .circulo {
+            border: 1px solid black;
+            border-radius: 30px;
+        }
     }
 }
