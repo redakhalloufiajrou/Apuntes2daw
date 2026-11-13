@@ -77,6 +77,15 @@ main#home {
             justify-content: flex-end;
 
         }
+        figure{
+            div{
+                display: flex;
+                justify-content: space-between;
+            }
+            div + p{
+                color: grey;
+            }
+        }
         
     }
 
