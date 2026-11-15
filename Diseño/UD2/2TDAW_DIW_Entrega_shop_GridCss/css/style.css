@@ -110,3 +110,99 @@ section#nav {
         }
     }
 }
+
+section#texto{
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    h2{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 60%;
+        font-size: 3rem;
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    p{
+        grid-column: 2/3;
+        grid-row: 8/9;
+    }
+    a{
+        grid-column: 2/3;
+        grid-row: 9/10;
+        margin-top: 3%;
+        color: black;
+    }
+}
+
+footer#footer {
+    background-color: #f9f6f4;
+    padding: 5% 10%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 2fr;
+    gap: 2%;
+
+    div.footer-col {
+        h4 {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #8c8987;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin-bottom: 0.9rem;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    div.newsletter {
+        form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d8d5d2;
+            padding-bottom: 0.6rem;
+
+            input {
+                border: none;
+                background: transparent;
+                outline: none;
+                width: 100%;
+                font-size: 0.9rem;
+                color: black;
+            }
+
+            button {
+                border: none;
+                background: transparent;
+                font-size: 0.9rem;
+                color: black;
+                cursor: pointer;
+                padding-left: 1rem;
+            }
+        }
+    }
+}
